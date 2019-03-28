@@ -98,6 +98,10 @@ public class MainModel {
         return listModel;
     }
 
+    public File getInputFile() {
+        return inputFile;
+    }
+
     public void addDataToList(Data data){
         String s = String.format("%-20s%-20s%-20s%s", data.id, data.faculty, data.major, data.year);
         getListModel().add(getDataArrayList().size(), s);

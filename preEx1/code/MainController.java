@@ -25,6 +25,8 @@ public class MainController {
                 try{
                     String fileName = theView.getInputFileName();
                     theModel.getFile(fileName);
+                    if(!theModel.getInputFile().exists())
+                        JOptionPane.showMessageDialog(null, "File not Found!");
                     theModel.populateBST();
                 }catch(Exception f){
                     f.printStackTrace();
