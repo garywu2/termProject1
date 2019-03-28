@@ -70,7 +70,7 @@ public class InsertView extends JFrame{
     }
 
     public String getYear(){
-        return majorField.getText();
+        return yearField.getText();
     }
 
     public JButton getInsertButton() {

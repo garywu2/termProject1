@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -22,9 +23,25 @@ public class InsertController {
                 String major = insertView.getMajor();
                 String year = insertView.getYear();
 
-                Data data = new Data(id, faculty, major, year);
+                boolean valid = true;
 
-                mainModel.addDataToList(data);
+                if(id.length() != 5){
+                    JOptionPane.showMessageDialog(null, "Error: Enter a 6-digit ID");
+                    valid = false;
+                }
+                if(faculty.length() != 2){
+                    JOptionPane.showMessageDialog(null, "Error: Enter a 4-Character Faculty name");
+                    valid = false;
+                }
+                if(major.length() != 4){
+                    JOptionPane.showMessageDialog(null, "Error: Enter a 2-Character Major name");
+                    valid = false;
+                }
+
+                if(valid == true) {
+                    Data data = new Data(id, faculty, major, year);
+                    mainModel.addDataToList(data);
+                }
             }
         }
 

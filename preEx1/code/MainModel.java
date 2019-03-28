@@ -76,6 +76,13 @@ public class MainModel {
         list.setVisibleRowCount(15);
     }
 
+    public void addDataToList(Data data){
+        String s = String.format("%-35s%-26s%-26s%s", data.id, data.faculty, data.major, data.year);
+        getListModel().add(getDataArrayList().size(), s);
+        getDataArrayList().add(new Data(data.id, data.faculty, data.major, data.year));
+        getBST().insert(data.id, data.faculty, data.major, data.year);
+    }
+
     //GETTERS AND SETTERS
 
     public JList getList() {
@@ -102,12 +109,7 @@ public class MainModel {
         return inputFile;
     }
 
-    public void addDataToList(Data data){
-        String s = String.format("%-20s%-20s%-20s%s", data.id, data.faculty, data.major, data.year);
-        getListModel().add(getDataArrayList().size(), s);
-        getDataArrayList().add(new Data(data.id, data.faculty, data.major, data.year));
-        getBST().insert(data.id, data.faculty, data.major, data.year);
-    }
+
 }
 
 
