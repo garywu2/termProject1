@@ -1923,13 +1923,47 @@
 											"height": 13,
 											"text": "-pool: ExecutorService",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFpy4dC/jCpHxE=",
+											"_parent": {
+												"$ref": "AAAAAAFpyktC8Lz6xF8="
+											},
+											"model": {
+												"$ref": "AAAAAAFpy4dC4TCdvgY="
+											},
+											"font": "Arial;13;0",
+											"left": 1693,
+											"top": 531,
+											"width": 216.814453125,
+											"height": 13,
+											"text": "-socketOut: ObjectOutputStream",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFpy4iZFzIAK30=",
+											"_parent": {
+												"$ref": "AAAAAAFpyktC8Lz6xF8="
+											},
+											"model": {
+												"$ref": "AAAAAAFpy4iY/DH04zU="
+											},
+											"font": "Arial;13;0",
+											"left": 1693,
+											"top": 546,
+											"width": 216.814453125,
+											"height": 13,
+											"text": "-socketIn: ObjectInputStream",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1688,
 									"top": 481,
 									"width": 226.814453125,
-									"height": 53
+									"height": 83
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1952,7 +1986,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1693,
-											"top": 539,
+											"top": 569,
 											"width": 216.814453125,
 											"height": 13,
 											"text": "+communicateWithClient(): void",
@@ -1961,7 +1995,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 1688,
-									"top": 534,
+									"top": 564,
 									"width": 226.814453125,
 									"height": 23
 								},
@@ -2004,7 +2038,7 @@
 							"left": 1688,
 							"top": 456,
 							"width": 226.814453125,
-							"height": 121,
+							"height": 131,
 							"nameCompartment": {
 								"$ref": "AAAAAAFpyktC77z1+FI="
 							},
@@ -2312,7 +2346,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 1472,
-									"top": 401,
+									"top": 404,
 									"width": 91.39990234375,
 									"height": 13,
 									"alpha": 0.4691329886001425,
@@ -2335,7 +2369,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 1474,
-									"top": 382,
+									"top": 384,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -2356,7 +2390,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 1461,
-									"top": 425,
+									"top": 427,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -2374,7 +2408,7 @@
 								"$ref": "AAAAAAFpykcAw6reFtc="
 							},
 							"lineStyle": 1,
-							"points": "1245:352;1687:483",
+							"points": "1245:352;1687:487",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFpykwe18D9c4k="
@@ -4244,8 +4278,8 @@
 										"$ref": "AAAAAAFpyk3u/tBSKog="
 									},
 									"font": "Arial;13;0",
-									"left": 1879,
-									"top": 701,
+									"left": 1881,
+									"top": 706,
 									"width": 28.5517578125,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -4267,8 +4301,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 1880,
-									"top": 708,
+									"left": 1882,
+									"top": 714,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -4288,8 +4322,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1918,
-									"top": 686,
+									"left": 1920,
+									"top": 691,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -4372,8 +4406,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1835,
-									"top": 600,
+									"left": 1839,
+									"top": 610,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -4392,8 +4426,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1824,
-									"top": 609,
+									"left": 1828,
+									"top": 619,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -4412,8 +4446,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1856,
-									"top": 583,
+									"left": 1860,
+									"top": 593,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -4458,7 +4492,7 @@
 								"$ref": "AAAAAAFpykyt38VSKTI="
 							},
 							"lineStyle": 1,
-							"points": "1978:823;1835:577",
+							"points": "1978:823;1839:587",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFpyk3u/9BX7to="
@@ -11840,6 +11874,26 @@
 									"name": "pool",
 									"visibility": "private",
 									"type": "ExecutorService"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAFpy4dC4TCdvgY=",
+									"_parent": {
+										"$ref": "AAAAAAFpyktC77zykkU="
+									},
+									"name": "socketOut",
+									"visibility": "private",
+									"type": "ObjectOutputStream"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAFpy4iY/DH04zU=",
+									"_parent": {
+										"$ref": "AAAAAAFpyktC77zykkU="
+									},
+									"name": "socketIn",
+									"visibility": "private",
+									"type": "ObjectInputStream"
 								}
 							],
 							"operations": [
