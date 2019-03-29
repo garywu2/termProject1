@@ -482,7 +482,7 @@
 											"top": 278,
 											"width": 226.83984375,
 											"height": 13,
-											"text": "-socketOut: PrintWriter",
+											"text": "-socketOut: ObjectOutputStream",
 											"horizontalAlignment": 0
 										},
 										{
@@ -516,7 +516,7 @@
 											"top": 308,
 											"width": 226.83984375,
 											"height": 13,
-											"text": "-socketIn: BufferedReader",
+											"text": "-socketIn: ObjectInputStream",
 											"horizontalAlignment": 0
 										},
 										{
@@ -10351,7 +10351,7 @@
 									},
 									"name": "socketOut",
 									"visibility": "private",
-									"type": "PrintWriter"
+									"type": "ObjectOutputStream"
 								},
 								{
 									"_type": "UMLAttribute",
@@ -10371,7 +10371,7 @@
 									},
 									"name": "socketIn",
 									"visibility": "private",
-									"type": "BufferedReader"
+									"type": "ObjectInputStream"
 								},
 								{
 									"_type": "UMLAttribute",
