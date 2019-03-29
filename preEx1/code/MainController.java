@@ -3,11 +3,22 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * This class is responsible from controlling the MainView and
+ * the MainModel class
+ */
 public class MainController {
+
+    //MEMBER VARIABLES
 
     private MainView theView;
     private MainModel theModel;
 
+    /**
+     * Constructs a MainController Object
+     * @param v MainView object
+     * @param m MainModel object
+     */
     public MainController(MainView v, MainModel m){
         theView = v;
         theModel = m;
@@ -17,6 +28,9 @@ public class MainController {
         theView.addFindListener(new FindListen());
         theView.addInsertListener(new InsertListen());
     }
+
+    //ACTION LISTENER IMPLEMENTATION FOR EACH
+    //BUTTON ON THE MAIN VIEW
 
     class FileListen implements ActionListener{
 

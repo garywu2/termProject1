@@ -2,7 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * This class is responsible for the Insert Window GUI
+ */
 public class InsertView extends JFrame{
+
+    //MEMBER VARIABLES
 
     private JPanel titlePanel, centrePanel, buttonPanel;
 
@@ -10,6 +15,9 @@ public class InsertView extends JFrame{
 
     private JTextField idField, facultyField, majorField, yearField;
 
+    /**
+     * Creates an InsertView object
+     */
     public InsertView(){
         titlePanel = new JPanel();
         centrePanel = new JPanel();
@@ -57,6 +65,8 @@ public class InsertView extends JFrame{
         setVisible(true);
     }
 
+    //GETTERS AND SETTERS
+
     public String getIDNumber(){
         return idField.getText();
     }
@@ -80,6 +90,8 @@ public class InsertView extends JFrame{
     public JButton getReturnButton() {
         return returnButton;
     }
+
+    //ADD ACTION LISTENER METHODS
 
     public void addInsertListener(ActionListener listenForInsertButton){
         insertButton.addActionListener(listenForInsertButton);

@@ -2,10 +2,21 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * This class is responsible for controlling the InsertView
+ */
 public class InsertController {
+
+    //MEMBER VARIABLES
 
     private InsertView insertView;
     private MainModel mainModel;
+
+    /**
+     * Creates an InsertController object
+     * @param v InsertView object
+     * @param model MainModel object (to add data from user input)
+     */
     public InsertController(InsertView v, MainModel model){
         insertView = v;
         mainModel = model;
@@ -13,6 +24,9 @@ public class InsertController {
         insertView.addInsertListener(new InsertListen());
         insertView.addReturnListener(new ReturnListen());
     }
+
+    //ACTION LISTENER IMPLEMENTATION FOR EACH BUTTON
+    //IN INSERT VIEW
 
     class InsertListen implements ActionListener {
 

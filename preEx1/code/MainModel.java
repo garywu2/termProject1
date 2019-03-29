@@ -4,7 +4,13 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * This class is responsible to handle all data associated
+ * with the main window of the GUI
+ */
 public class MainModel {
+
+    //MEMBER VARIABLES
 
     private File inputFile;
 
@@ -16,12 +22,20 @@ public class MainModel {
     private JList list;
     private JScrollPane scrollPane;
 
+    /**
+     * gets file from the directory
+     * @param n name of file
+     */
     public void getFile(String n){
         String directory = System.getProperty("user.dir");
         String path = directory + java.io.File.separator + n;
         inputFile = new java.io.File(path);
     }
 
+    /**
+     * populates the binary search tree with the
+     * data from the file
+     */
     public void populateBST(){
         try {
             BST = new BinSearchTree();
@@ -46,6 +60,11 @@ public class MainModel {
         }
     }
 
+    /**
+     * populates a data array which is used to create the JList
+     * @param dataArr data array of strings
+     * @param rawData raw data from the file
+     */
     public void populateDataArr(ArrayList<String> dataArr, String[] rawData){
         for(String s: rawData){
             for(int i = 0; i < s.length(); i++){
@@ -58,6 +77,9 @@ public class MainModel {
         dataArrayList.add(new Data(dataArr.get(0), dataArr.get(1), dataArr.get(2), dataArr.get(3)));
     }
 
+    /**
+     * creates list with the data which will be displayed on the GUI
+     */
     public void createList(){
         String[] arr = new String[dataArrayList.size()];
         for(int i = 0; i < dataArrayList.size(); i++)
@@ -76,6 +98,10 @@ public class MainModel {
         list.setVisibleRowCount(15);
     }
 
+    /**
+     * adds new data to list
+     * @param data data being added
+     */
     public void addDataToList(Data data){
         String s = String.format("%-35s%-26s%-26s%s", data.id, data.faculty, data.major, data.year);
         getListModel().add(getDataArrayList().size(), s);

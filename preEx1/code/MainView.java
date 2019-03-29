@@ -2,12 +2,22 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * This class is responsible with main window GUI
+ */
 public class MainView extends JFrame {
+
+    //MEMBER VARIABLES
 
     private JPanel titlePanel, centrePanel, buttonPanel;
 
     private JButton insertButton, findButton, browseButton, fileButton;
 
+    /**
+     * Constructs a MainView object
+     * @param widthPixels width of the window
+     * @param heightPixels height of the window
+     */
     public MainView(int widthPixels, int heightPixels){
         titlePanel = new JPanel();
         centrePanel = new JPanel();
@@ -35,9 +45,15 @@ public class MainView extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
+    /**
+     * gets input file name from user
+     * @return name of file
+     */
     public String getInputFileName(){
         return JOptionPane.showInputDialog("Enter the file name:");
     }
+
+    //ADD ACTION LISTENER FUNCTIONS
 
     public void addInsertListener(ActionListener listenForInsertButton){
         insertButton.addActionListener(listenForInsertButton);
@@ -54,6 +70,8 @@ public class MainView extends JFrame {
     public void addFileListener(ActionListener listenForFileButton){
         fileButton.addActionListener(listenForFileButton);
     }
+
+    //GETTERS AND SETTERS
 
     public JButton getInsertButton() {
         return insertButton;
