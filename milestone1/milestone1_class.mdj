@@ -507,23 +507,6 @@
 										},
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAFpyn1kcnezSxE=",
-											"_parent": {
-												"$ref": "AAAAAAFpykcAxarkgyQ="
-											},
-											"model": {
-												"$ref": "AAAAAAFpyn1kInewzq0="
-											},
-											"font": "Arial;13;0",
-											"left": 1013,
-											"top": 323,
-											"width": 226.83984375,
-											"height": 13,
-											"text": "-mainGUIController: MainGUIController",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
 											"_id": "AAAAAAFpyn2eNnj14cQ=",
 											"_parent": {
 												"$ref": "AAAAAAFpykcAxarkgyQ="
@@ -533,7 +516,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1013,
-											"top": 338,
+											"top": 323,
 											"width": 226.83984375,
 											"height": 13,
 											"text": "-loginController: LoginController",
@@ -544,7 +527,7 @@
 									"left": 1008,
 									"top": 273,
 									"width": 236.83984375,
-									"height": 83
+									"height": 68
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -567,7 +550,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1013,
-											"top": 361,
+											"top": 346,
 											"width": 226.83984375,
 											"height": 13,
 											"text": "+communicateServer(): void",
@@ -576,7 +559,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 1008,
-									"top": 356,
+									"top": 341,
 									"width": 236.83984375,
 									"height": 23
 								},
@@ -11248,18 +11231,6 @@
 									"name": "socketIn",
 									"visibility": "private",
 									"type": "BufferedReader"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAFpyn1kInewzq0=",
-									"_parent": {
-										"$ref": "AAAAAAFpykcAvqrcu4c="
-									},
-									"name": "mainGUIController",
-									"visibility": "private",
-									"type": {
-										"$ref": "AAAAAAFpykc1HKsHgd4="
-									}
 								},
 								{
 									"_type": "UMLAttribute",
