@@ -74,7 +74,7 @@ public class ServerCommunicationController {
         try {
             boolean verified = false;
 
-            while(verified) {
+            while(!verified) {
                 User readUser = (User) socketIn.readObject();
                 System.out.println("read");
                 if (serverModel.verifyUser(readUser)) {
