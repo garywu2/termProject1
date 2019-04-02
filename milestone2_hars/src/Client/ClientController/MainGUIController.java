@@ -10,11 +10,27 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The MAIN GUIController class essentially holds all code for that
+ * action listeners of the various buttons such as browse, it holds
+ * objects of the main view and model
+ * Overall the purpose of this class is to add the action listeners
+ * to the various buttons in the main view
+ * @author  Gary Wu, Harsohail Brar, Ryan Holt
+ * @version 4.10.0
+ * @since April 5, 2019
+ */
 public class MainGUIController {
 
     private MainView mainView;
     private MainModel mainModel;
 
+    /**
+     * Constructor for the MainGUIController class which essentially adds
+     * action listeners to the different buttons
+     * @param v this is the MainView Object
+     * @param m this is the MainModel Object
+     */
     public MainGUIController(MainView v, MainModel m){
         mainView = v;
         mainModel = m;
@@ -24,14 +40,21 @@ public class MainGUIController {
         mainView.addSearchByNameListener(new SearchByNameListen());
     }
 
+    /**
+     * This is the class for the browse button action listener
+     */
     class BrowseListen implements ActionListener{
 
+        /**
+         * When this button is pressed the action performed a
+         * list of the many tools will now become visible to the user
+         * and it will also add the action listener associated with the list
+         */
         public void actionPerformed(ActionEvent e){
             if(e.getSource() == mainView.getBrowseButton()){
                 try{
                     if(mainView.getList() == null){
-                        mainView.createList(mainModel.getItems());
-                        mainView.addListSelectionListener(new ListSelectionListen());
+                        mainView.createTable(mainModel.getItems());
                     }
                 }catch (Exception f){
                     f.printStackTrace();
@@ -41,8 +64,18 @@ public class MainGUIController {
 
     }
 
+    /**
+     * This is the class for the Search by ID button action listener
+     */
     class SearchByIDListen implements ActionListener{
 
+        /**
+         * When the button is pressed the user will be prompted to enter the
+         * ID of a tool and it will go through all the tools and try to match
+         * the tool ID with one in the database and if it matches
+         * then the elements of the tool will appear in a dialog box
+         * else tells the user it does not exist
+         */
         public void actionPerformed(ActionEvent e){
             if(e.getSource() == mainView.getSearchByIDButton()){
                 String input = JOptionPane.showInputDialog("Please enter tool ID:");
@@ -71,8 +104,18 @@ public class MainGUIController {
 
     }
 
+    /**
+     * This is the class for the search by name action listener
+     */
     class SearchByNameListen implements ActionListener{
 
+        /**
+         * When the button is pressed the user will be prompted to enter the
+         * name of a tool and it will go through all the tools and try to match
+         * the tool name with one in the database and if it matches
+         * then the elements of the tool will appear in a dialog box
+         * else tells the user it does not exist
+         */
         public void actionPerformed(ActionEvent e){
             if(e.getSource() == mainView.getSearchByNameButton()){
                 String input = JOptionPane.showInputDialog("Please enter tool Name:");
@@ -96,18 +139,6 @@ public class MainGUIController {
 
                 JOptionPane.showMessageDialog(null, "Tool not found!");
             }
-        }
-
-    }
-
-    class ListSelectionListen implements ListSelectionListener{
-
-        public void valueChanged(ListSelectionEvent e){
-            if(!e.getValueIsAdjusting()){
-                mainView.getSelectedItem().setText(mainView.getList().getSelectedValue().toString());
-            }
-
-            mainView.getSelectedItem().validate();
         }
 
     }

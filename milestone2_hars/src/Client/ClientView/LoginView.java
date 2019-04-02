@@ -6,6 +6,9 @@ import java.awt.event.ActionListener;
 
 /**
  * This class is responsible for the Login GUI
+ * @author  Gary Wu, Harsohail Brar, Ryan Holt
+ * @version 4.10.0
+ * @since April 5, 2019
  */
 public class LoginView extends JFrame {
 
@@ -53,6 +56,10 @@ public class LoginView extends JFrame {
         buttonPanel.add(loginButton);
 
         titlePanel.add(new Label("Please enter username and password:"));
+
+        pack();
+        setSize(width, height);
+        setLocationRelativeTo(null);
 
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

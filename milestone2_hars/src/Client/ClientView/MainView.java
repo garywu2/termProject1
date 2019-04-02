@@ -9,6 +9,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * The mainView class holds the entire GUI after you log in
+ * The main purpose of this class is to create the GUI as well as the
+ * different buttons
+ * @author  Gary Wu, Harsohail Brar, Ryan Holt
+ * @version 4.10.0
+ * @since April 5, 2019
+ */
 public class MainView extends JFrame {
 
     //MEMBER VARIABLES
@@ -23,7 +31,15 @@ public class MainView extends JFrame {
     private JList list;
     private JScrollPane scrollPane;
 
+    private JTable table;
 
+    /**
+     * This is the constructor for the MainView Class
+     * which starts by making the GUI by adding JPanel and then adding values
+     * to different aspects of the GUI such as buttons
+     * @param width width of GUI
+     * @param height height of GUI
+     */
     public MainView(int width, int height){
         titlePanel = new JPanel();
         centrePanel = new JPanel();
@@ -34,7 +50,7 @@ public class MainView extends JFrame {
         searchByNameButton = new JButton("Search by Name");
         buyButton = new JButton("Buy");
 
-        selectedItem = new JTextField(25);
+        selectedItem = new JTextField(30);
         selectedItemLabel = new JLabel("Selected Item");
         selectedItemLabel.setLabelFor(selectedItem);
 
@@ -45,40 +61,40 @@ public class MainView extends JFrame {
         add("Center", centrePanel);
         add("South", buttonPanel);
 
-        titlePanel.add(new Label("An Tool Shop Application"));
+        titlePanel.add(new Label("A Tool Shop Application"));
 
         buttonPanel.add(browseButton);
         buttonPanel.add(searchByIDButton);
         buttonPanel.add(searchByNameButton);
         buttonPanel.add(buyButton);
+        pack();
+        setSize(width, height);
+        setLocationRelativeTo(null);
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
-    public void createList(ArrayList<Item> items){
-        listModel = new DefaultListModel();
+    /**
+     * Creates a table of the objects and displays it on the GUI
+     * @param items the list of Items
+     */
+    public void createTable(ArrayList<Item> items){
+        String[][] data = new String[items.size()][5];
 
-        String id = "ID";
-        String name = "Name";
-        String quantity = "Quantity";
-        String price = "Price";
-        String supplier = "Supplier";
-
-        String header = String.format("%-5s %-20s %-10s %-7s %-15s", id, name, quantity, price, supplier);
-
-        listModel.add(0, header);
-        for(int i = 1; i < items.size(); i++){
-            listModel.add(i, items.get(i).toString());
+        for(int i = 0; i < items.size(); i++){
+            data[i][0] = String.valueOf(items.get(i).getToolId());
+            data[i][1] = items.get(i).getToolName();
+            data[i][2] = String.valueOf(items.get(i).getToolQuantity());
+            data[i][3] = String.valueOf(items.get(i).getToolPrice());
+            data[i][4] = items.get(i).getToolSupplier().getName();
         }
 
-        list = new JList(listModel);
-        scrollPane = new JScrollPane(list);
+        String[] header = {"ID", "Name", "Quantity", "Price", "Supplier"};
 
-        list.setVisibleRowCount(15);
+        table = new JTable(data, header);
+        scrollPane = new JScrollPane(table);
 
         centrePanel.add(scrollPane, BorderLayout.LINE_END);
-        centrePanel.add(selectedItemLabel);
-        centrePanel.add(selectedItem);
 
         revalidate();
     }
@@ -95,22 +111,31 @@ public class MainView extends JFrame {
         searchByNameButton.addActionListener(listenForSearchByNameButton);
     }
 
-    public void addListSelectionListener(ListSelectionListener listenForListSelection){
-        list.addListSelectionListener(listenForListSelection);
-    }
-
+    /**
+     * Adds a action listener to the browse button
+     * @param listenForBrowseButton
+     */
     public JButton getBrowseButton() {
         return browseButton;
     }
 
+    /**
+     * Adds a action listener to the searchByID button
+     * @param listenForBrowseButton
+     */
     public JButton getSearchByIDButton() {
         return searchByIDButton;
     }
 
+    /**
+     * Adds a action listener to the searchByName button
+     * @param listenForBrowseButton
+     */
     public JButton getSearchByNameButton() {
         return searchByNameButton;
     }
 
+    //getters and setters
     public JButton getBuyButton() {
         return buyButton;
     }

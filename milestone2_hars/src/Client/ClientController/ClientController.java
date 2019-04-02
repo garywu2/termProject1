@@ -12,6 +12,11 @@ import java.util.ArrayList;
 /**
  * This class is responsible for communicating with the server
  * and holding the LoginController
+ * Overall the client controller is used for communication with
+ * the server
+ * @author  Gary Wu, Harsohail Brar, Ryan Holt
+ * @version 4.10.0
+ * @since April 5, 2019
  */
 public class ClientController {
 
@@ -48,7 +53,7 @@ public class ClientController {
     public static void main(String[] args){
         ClientController clientController = new ClientController("localhost", 1234);
 
-        //clientController.importToolsFromServer();
+        clientController.importToolsFromServer();
     }
 
     /**

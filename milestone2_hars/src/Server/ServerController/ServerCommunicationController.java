@@ -6,12 +6,19 @@ import Server.ServerModel.Item;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.net.ServerSocket;
 import java.net.Socket;
 import Server.ServerModel.ServerModel;
 
-
+/**
+ *The Server communications class serves to create the different input and output
+ *screens as well as start off the GUI with the log in menu and ensuring the user
+ *enters a correct username and pass.  It also creates the new sockets for input
+ * and output and exports the tools into the client
+ * @author  Gary Wu, Harsohail Brar, Ryan Holt
+ * @version 4.10.0
+ * @since April 5, 2019
+ */
 public class ServerCommunicationController {
 
     private Socket aSocket;
@@ -20,6 +27,11 @@ public class ServerCommunicationController {
     private ServerSocket serverSocket;
     private ServerModel serverModel;
 
+    /**
+     * This is the constructor for the class and it adds a new
+     * socket and creates the output stream as well as creates
+     * a new object of the serverModel
+     */
     public ServerCommunicationController(){
         try{
 
@@ -39,28 +51,36 @@ public class ServerCommunicationController {
             System.out.println(e.getMessage());
 
         }
-
-
     }
 
+    /**
+     * This is the main String for the Server which creates the input stream and then exports the
+     * tools and checks to see if the user entered right username and password
+     */
     public static void main(String[] args){
         ServerCommunicationController myServer = new ServerCommunicationController();
 
         myServer.createInputStream(); //after connects with client (client creates output stream)
 
-        //myServer.exportToolsToClient();
+        myServer.exportToolsToClient();
 
         myServer.verifyLogin();
 
         myServer.communicateWithClient();
     }
 
+    /**
+     * Communicate with the client
+     */
     public void communicateWithClient(){
         while(true){
 
         }
     }
 
+    /**
+     * Creates an input socket stream from server
+     */
     public void createInputStream(){
         try{
             socketIn = new ObjectInputStream(aSocket.getInputStream());
@@ -70,18 +90,23 @@ public class ServerCommunicationController {
         }
     }
 
+    /**
+     * Verifies the log in by running an infinite loop that only stops
+     * if the user has entered a valid username and password
+     */
     public void verifyLogin(){
         try {
             boolean verified = false;
 
             while(!verified) {
                 User readUser = (User) socketIn.readObject();
-                System.out.println("read");
+
                 if (serverModel.verifyUser(readUser)) {
                     socketOut.writeObject("verified");
+                    System.out.println("User Verified!");
                     verified = true;
+                    return;
                 } else {
-                    System.out.println("not veri");
                     socketOut.writeObject("notVerified");
                 }
 
@@ -92,6 +117,9 @@ public class ServerCommunicationController {
         }
     }
 
+    /**
+     * Exports all the object of tools to the client
+     */
     public void exportToolsToClient(){
         try {
             int tools = 0;
