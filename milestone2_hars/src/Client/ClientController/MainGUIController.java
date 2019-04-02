@@ -2,11 +2,8 @@ package Client.ClientController;
 
 import Client.ClientView.MainView;
 import Client.ClientModel.MainModel;
-import Server.ServerModel.Item;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -53,7 +50,7 @@ public class MainGUIController {
         public void actionPerformed(ActionEvent e){
             if(e.getSource() == mainView.getBrowseButton()){
                 try{
-                    if(mainView.getList() == null){
+                    if(mainView.getTable() == null){
                         mainView.createTable(mainModel.getItems());
                     }
                 }catch (Exception f){

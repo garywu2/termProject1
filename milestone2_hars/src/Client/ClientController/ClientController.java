@@ -7,7 +7,6 @@ import Server.ServerModel.Item;
 
 import java.io.*;
 import java.net.*;
-import java.util.ArrayList;
 
 /**
  * This class is responsible for communicating with the server
@@ -40,7 +39,9 @@ public class ClientController {
             socketIn = new ObjectInputStream(aSocket.getInputStream());
             socketOut = new ObjectOutputStream(aSocket.getOutputStream());
 
-            loginController = new LoginController(new MainGUIController(new MainView(500,400), new MainModel()),new LoginView(250,150), socketOut, socketIn);
+            loginController = new LoginController(new MainGUIController(new MainView(500,400),
+                                                                        new MainModel()),new LoginView(250,150),
+                                                                        socketOut, socketIn);
         }catch(IOException e){
             e.printStackTrace();
         }

@@ -3,9 +3,7 @@ package Client.ClientView;
 import Server.ServerModel.Item;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
@@ -27,10 +25,7 @@ public class MainView extends JFrame {
     private JTextField selectedItem;
     private JLabel selectedItemLabel;
 
-    private DefaultListModel listModel;
-    private JList list;
     private JScrollPane scrollPane;
-
     private JTable table;
 
     /**
@@ -140,15 +135,15 @@ public class MainView extends JFrame {
         return buyButton;
     }
 
-    public JList getList() {
-        return list;
-    }
-
     public JPanel getCentrePanel() {
         return centrePanel;
     }
 
     public JTextField getSelectedItem() {
         return selectedItem;
+    }
+
+    public JTable getTable() {
+        return table;
     }
 }
