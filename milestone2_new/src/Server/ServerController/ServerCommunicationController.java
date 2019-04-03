@@ -1,13 +1,13 @@
 package Server.ServerController;
 
-import Server.ServerModel.User;
-import Server.ServerModel.Item;
+import Server.ServerModel.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+
 import Server.ServerModel.ServerModel;
 
 /**
@@ -21,6 +21,7 @@ import Server.ServerModel.ServerModel;
  */
 public class ServerCommunicationController {
 
+    private final int PORT = 9999;
     private Socket aSocket;
     private ObjectInputStream socketIn;
     private ObjectOutputStream socketOut;
@@ -35,7 +36,7 @@ public class ServerCommunicationController {
     public ServerCommunicationController(){
         try{
 
-            serverSocket = new ServerSocket(8100);
+            serverSocket = new ServerSocket(PORT);
             System.out.println("Server is running");
 
             aSocket = serverSocket.accept();
@@ -66,15 +67,27 @@ public class ServerCommunicationController {
 
         myServer.verifyLogin();
 
-        myServer.communicateWithClient();
+        myServer.SupplierCheck();
     }
 
     /**
-     * Communicate with the client
+     * SupplierCheck
      */
-    public void communicateWithClient(){
-        while(true){
+    public void SupplierCheck() {
+        while (true) {
+            try {
+                String read = (String) socketIn.readObject();
+                int readSuppID = Integer.valueOf(read);
 
+                Supplier searchedSupp = serverModel.getMyShop().searchSupplier(readSuppID);
+
+                if (searchedSupp != null)
+                    socketOut.writeObject(searchedSupp);
+
+            } catch (Exception e) {
+                System.out.println("Supplier Check Error");
+                e.printStackTrace();
+            }
         }
     }
 

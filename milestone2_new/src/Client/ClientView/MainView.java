@@ -3,6 +3,7 @@ package Client.ClientView;
 import Server.ServerModel.Item;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -20,11 +21,12 @@ public class MainView extends JFrame {
     //MEMBER VARIABLES
     private JPanel titlePanel, centrePanel, buttonPanel;
 
-    private JButton browseButton, searchByIDButton, searchByNameButton, buyButton;
+    private JButton browseButton, searchByIDButton, searchByNameButton, saleButton, addButton, removeButton;
 
     private JTextField selectedItem;
     private JLabel selectedItemLabel;
 
+    private DefaultTableModel tableModel;
     private JScrollPane scrollPane;
     private JTable table;
 
@@ -43,7 +45,9 @@ public class MainView extends JFrame {
         browseButton = new JButton("Browse");
         searchByIDButton = new JButton("Search by ID");
         searchByNameButton = new JButton("Search by Name");
-        buyButton = new JButton("Buy");
+        saleButton = new JButton("Sale");
+        addButton = new JButton("Add Item");
+        removeButton = new JButton("Remove Item");
 
         selectedItem = new JTextField(30);
         selectedItemLabel = new JLabel("Selected Item");
@@ -61,7 +65,10 @@ public class MainView extends JFrame {
         buttonPanel.add(browseButton);
         buttonPanel.add(searchByIDButton);
         buttonPanel.add(searchByNameButton);
-        buttonPanel.add(buyButton);
+        buttonPanel.add(saleButton);
+        buttonPanel.add(addButton);
+        buttonPanel.add(removeButton);
+
         pack();
         setSize(width, height);
         setLocationRelativeTo(null);
@@ -85,54 +92,88 @@ public class MainView extends JFrame {
         }
 
         String[] header = {"ID", "Name", "Quantity", "Price", "Supplier"};
+        tableModel = new DefaultTableModel(data, header);
 
-        table = new JTable(data, header);
+        table = new JTable(tableModel);
         scrollPane = new JScrollPane(table);
 
         centrePanel.add(scrollPane, BorderLayout.LINE_END);
-
         revalidate();
     }
 
+    /**
+     * Adds an action listener to the browse button
+     * @param listenForBrowseButton
+     */
     public void addBrowseListener(ActionListener listenForBrowseButton){
         browseButton.addActionListener(listenForBrowseButton);
     }
 
+    /**
+     * Adds an action listener to the searchByID button
+     * @param listenForSearchByIDButton
+     */
     public void addSearchByIDListener(ActionListener listenForSearchByIDButton){
         searchByIDButton.addActionListener(listenForSearchByIDButton);
     }
 
+    /**
+     * Adds an action listener to the searchByName button
+     * @param listenForSearchByNameButton
+     */
     public void addSearchByNameListener(ActionListener listenForSearchByNameButton){
         searchByNameButton.addActionListener(listenForSearchByNameButton);
     }
 
     /**
-     * Adds a action listener to the browse button
-     * @param listenForBrowseButton
+     * Adds an action listener to the sale button
+     * @param listenForSaleButton
      */
+    public void addSaleListener(ActionListener listenForSaleButton){
+        saleButton.addActionListener(listenForSaleButton);
+    }
+
+    /**
+     * Adds an action listener to the add button
+     * @param listenForAddButton
+     */
+    public void addAddListener(ActionListener listenForAddButton){
+        addButton.addActionListener(listenForAddButton);
+    }
+
+    /**
+     * Adds an action listener to the remove button
+     * @param listenerForRemoveButton
+     */
+    public void addRemoveListener(ActionListener listenerForRemoveButton){
+        removeButton.addActionListener(listenerForRemoveButton);
+    }
+
+
+    //getters and setters
+
     public JButton getBrowseButton() {
         return browseButton;
     }
 
-    /**
-     * Adds a action listener to the searchByID button
-     * @param listenForBrowseButton
-     */
     public JButton getSearchByIDButton() {
         return searchByIDButton;
     }
 
-    /**
-     * Adds a action listener to the searchByName button
-     * @param listenForBrowseButton
-     */
     public JButton getSearchByNameButton() {
         return searchByNameButton;
     }
 
-    //getters and setters
-    public JButton getBuyButton() {
-        return buyButton;
+    public JButton getSaleButton() {
+        return saleButton;
+    }
+
+    public JButton getAddButton() {
+        return addButton;
+    }
+
+    public JButton getRemoveButton() {
+        return removeButton;
     }
 
     public JPanel getCentrePanel() {
@@ -145,5 +186,13 @@ public class MainView extends JFrame {
 
     public JTable getTable() {
         return table;
+    }
+
+    public void setTable(JTable table) {
+        this.table = table;
+    }
+
+    public DefaultTableModel getTableModel() {
+        return tableModel;
     }
 }

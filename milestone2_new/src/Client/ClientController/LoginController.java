@@ -1,13 +1,11 @@
 package Client.ClientController;
 
 import Client.ClientView.LoginView;
-import Server.ServerModel.User;
+import Server.ServerModel.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 
 /**
  * This class is responsible for controlling the login view

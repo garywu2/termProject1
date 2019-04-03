@@ -1,10 +1,10 @@
 package Client.ClientController;
 
-import Client.ClientModel.MainModel;
+//import Client.ClientModel.*;
 import Client.ClientView.LoginView;
 import Client.ClientView.MainView;
-import Server.ServerModel.Item;
-import sun.rmi.runtime.Log;
+
+import Server.ServerModel.*;
 
 import java.io.*;
 import java.net.*;
@@ -21,7 +21,6 @@ import java.net.*;
 public class ClientController {
 
     //MEMBER VARIABLES
-
     private ObjectOutputStream socketOut;
     private Socket aSocket;
     private ObjectInputStream socketIn;
@@ -41,7 +40,7 @@ public class ClientController {
             socketIn = new ObjectInputStream(aSocket.getInputStream());
             socketOut = new ObjectOutputStream(aSocket.getOutputStream());
 
-            MainView mainView = new MainView(500,400);
+            MainView mainView = new MainView(750,600);
             LoginView loginView = new LoginView(250, 150);
 
             loginController = new LoginController(loginView, this);
@@ -56,7 +55,7 @@ public class ClientController {
      * @param args command line arguments
      */
     public static void main(String[] args){
-        ClientController cc = new ClientController("localhost", 8100);
+        ClientController cc = new ClientController("localhost", 9999);
 
         cc.importToolsFromServer();
 

@@ -2,10 +2,12 @@ package Client.ClientController;
 
 import Client.ClientView.MainView;
 import Client.ClientModel.MainModel;
+import Server.ServerModel.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 /**
  * The MAIN GUIController class essentially holds all code for that
@@ -26,7 +28,6 @@ public class MainGUIController extends GUIController{
      * Constructor for the MainGUIController class which essentially adds
      * action listeners to the different buttons
      * @param v this is the MainView Object
-     * @param m this is the MainModel Object
      */
     public MainGUIController(MainView v, ClientController cc){
         super(cc);
@@ -36,6 +37,9 @@ public class MainGUIController extends GUIController{
         mainView.addBrowseListener(new BrowseListen());
         mainView.addSearchByIDListener(new SearchByIDListen());
         mainView.addSearchByNameListener(new SearchByNameListen());
+        mainView.addSaleListener(new SaleListen());
+        mainView.addAddListener(new AddListen());
+        mainView.addRemoveListener(new RemoveListen());
     }
 
     /**
@@ -136,6 +140,80 @@ public class MainGUIController extends GUIController{
                 }
 
                 JOptionPane.showMessageDialog(null, "Tool not found!");
+            }
+        }
+
+    }
+
+    class SaleListen implements ActionListener{
+
+        public void actionPerformed(ActionEvent e){
+            if(e.getSource() == mainView.getSaleButton()){
+                int selectedRow = mainView.getTable().getSelectedRow();
+
+                if(selectedRow < 0) { // nothing selected
+                    JOptionPane.showMessageDialog(null, "Please select an item");
+                    return;
+                }
+
+                Item selectedItem = mainModel.getItems().get(selectedRow);
+
+                System.out.println(selectedRow);
+
+                int sold = Integer.parseInt(JOptionPane.showInputDialog("Enter number of " + selectedItem.getToolName() + " sold:"));
+                int currQuantity = mainModel.getItems().get(selectedRow).getToolQuantity();
+                mainModel.getItems().get(selectedRow).setToolQuantity(currQuantity - sold);
+
+                mainView.getTableModel().setValueAt(currQuantity - sold, selectedRow, 2);
+            }
+        }
+
+    }
+
+    class AddListen implements ActionListener{
+
+        public void actionPerformed(ActionEvent e){
+            if(e.getSource() == mainView.getAddButton()){
+                try {
+
+                    int id = Integer.parseInt(JOptionPane.showInputDialog("Enter new tool ID:"));
+                    String name = JOptionPane.showInputDialog("Enter new tool name: ");
+                    int quantity = Integer.parseInt(JOptionPane.showInputDialog("Enter new tool quantity: "));
+                    double price = Double.parseDouble(JOptionPane.showInputDialog("Enter new tool price"));
+                    int suppID = Integer.parseInt(JOptionPane.showInputDialog("Enter new tool supplier ID: "));
+
+                    clientController.getSocketOut().writeObject(String.valueOf(suppID));
+                    Supplier readSupp = (Supplier) clientController.getSocketIn().readObject();
+
+                    Item newItem = new Item(id, name, quantity, price, readSupp);
+                    mainModel.getItems().add(newItem);
+
+                    String[] newItemData = {String.valueOf(id), name, String.valueOf(quantity), String.valueOf(price), readSupp.getName()};
+                    mainView.getTableModel().addRow(newItemData);
+                }catch(Exception f){
+                    System.out.println("Add Listen Error");
+                    f.printStackTrace();
+                }
+            }
+        }
+
+    }
+
+    class RemoveListen implements ActionListener{
+
+        public void actionPerformed(ActionEvent e){
+            if(e.getSource() == mainView.getRemoveButton()){
+                int selectedRow = mainView.getTable().getSelectedRow();
+
+                if(selectedRow < 0) { // nothing selected
+                    JOptionPane.showMessageDialog(null, "Please select an item!");
+                    return;
+                }
+
+                Item selectedItem = mainModel.getItems().get(selectedRow);
+
+                mainView.getTableModel().removeRow(selectedRow);
+                mainModel.getItems().remove(selectedItem);
             }
         }
 
