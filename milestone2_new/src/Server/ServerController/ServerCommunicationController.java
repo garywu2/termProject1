@@ -83,6 +83,8 @@ public class ServerCommunicationController {
 
                 if (searchedSupp != null)
                     socketOut.writeObject(searchedSupp);
+                else
+                    socketOut.writeObject(null);
 
             } catch (Exception e) {
                 System.out.println("Supplier Check Error");

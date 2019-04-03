@@ -30,6 +30,9 @@ public class MainView extends JFrame {
     private JScrollPane scrollPane;
     private JTable table;
 
+    private int width;
+    private int height;
+
     /**
      * This is the constructor for the MainView Class
      * which starts by making the GUI by adding JPanel and then adding values
@@ -74,6 +77,9 @@ public class MainView extends JFrame {
         setLocationRelativeTo(null);
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        this.width = width;
+        this.height = height;
     }
 
     /**
@@ -88,7 +94,7 @@ public class MainView extends JFrame {
             data[i][1] = items.get(i).getToolName();
             data[i][2] = String.valueOf(items.get(i).getToolQuantity());
             data[i][3] = String.valueOf(items.get(i).getToolPrice());
-            data[i][4] = items.get(i).getToolSupplier().getName();
+            data[i][4] = items.get(i).getToolSupplier().getId() + " - " + items.get(i).getToolSupplier().getName();
         }
 
         String[] header = {"ID", "Name", "Quantity", "Price", "Supplier"};

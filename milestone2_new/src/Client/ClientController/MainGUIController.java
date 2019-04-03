@@ -185,6 +185,16 @@ public class MainGUIController extends GUIController{
                     clientController.getSocketOut().writeObject(String.valueOf(suppID));
                     Supplier readSupp = (Supplier) clientController.getSocketIn().readObject();
 
+                    if(readSupp == null){
+                        JOptionPane.showMessageDialog(null, "Supplier not found!");
+                    }
+
+                    while(readSupp == null){
+                        suppID = Integer.parseInt(JOptionPane.showInputDialog("Enter new tool supplier ID: "));
+                        clientController.getSocketOut().writeObject(String.valueOf(suppID));
+                        readSupp = (Supplier) clientController.getSocketIn().readObject();
+                    }
+
                     Item newItem = new Item(id, name, quantity, price, readSupp);
                     mainModel.getItems().add(newItem);
 
