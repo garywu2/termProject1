@@ -3,7 +3,8 @@ package Client.ClientController;
 import Client.ClientView.LoginView;
 import Client.ClientView.MainView;
 //import Client.ClientModel.*;
-import Server.ServerModel.*;
+//import Server.ServerModel.*;
+import utils.*;
 
 import java.io.*;
 import java.net.*;

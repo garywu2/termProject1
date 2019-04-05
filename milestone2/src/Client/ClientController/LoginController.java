@@ -1,7 +1,8 @@
 package Client.ClientController;
 
 import Client.ClientView.LoginView;
-import Server.ServerModel.*;
+//import Server.ServerModel.*;
+import utils.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

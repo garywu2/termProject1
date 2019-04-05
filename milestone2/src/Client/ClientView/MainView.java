@@ -1,6 +1,6 @@
 package Client.ClientView;
 
-import Server.ServerModel.*;
+import utils.*;
 
 
 import javax.swing.*;

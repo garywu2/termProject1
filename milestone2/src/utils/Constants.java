@@ -1,4 +1,4 @@
-package Server.ServerModel;
+package utils;
 
 import java.util.Scanner;
 
