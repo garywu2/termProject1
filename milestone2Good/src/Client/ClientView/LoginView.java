@@ -55,7 +55,7 @@ public class LoginView extends JFrame {
 
         buttonPanel.add(loginButton);
 
-        titlePanel.add(new Label("Please enter username and password:"));
+        titlePanel.add(new Label("Username: hi, Password: 123 (testing)"));
 
         pack();
         setSize(width, height);
@@ -72,7 +72,6 @@ public class LoginView extends JFrame {
     public void addLoginListener(ActionListener listenForLoginButton){
         loginButton.addActionListener(listenForLoginButton);
     }
-
 
     //GETTERS AND SETTERS
     public JButton getLoginButton() {
