@@ -1,3 +1,5 @@
+package Server.ServerModel;
+
 import java.util.ArrayList;
 import java.io.*;
 import java.util.Scanner;
