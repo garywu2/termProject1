@@ -21,7 +21,7 @@ import Server.ServerModel.ServerModel;
  */
 public class ServerCommunicationController {
 
-    private final int PORT = 9999;
+    private final int PORT = 9100;
     private Socket aSocket;
     private ObjectInputStream socketIn;
     private ObjectOutputStream socketOut;
@@ -67,29 +67,94 @@ public class ServerCommunicationController {
 
         myServer.verifyLogin();
 
-        myServer.SupplierCheck();
+        myServer.communicate();
     }
 
+    public void communicate(){
+        while(true){
+            try {
+                String input = (String) socketIn.readObject();
+                if(input.equals("add")) {
+                    supplierCheck();
+                    receiveNewItem();
+                }else if(input.equals("remove")){
+                    removeItemFromInventory();
+                }else if(input.equals("sale")){
+                    decreaseQuantityFromInventory();
+                }
+            }catch (Exception e){
+                System.out.println("Waiting for client...");
+            }
+        }
+    }
+
+    public void decreaseQuantityFromInventory(){
+        try{
+            int newQuantity = Integer.parseInt((String)socketIn.readObject());
+
+            Item readItem = (Item)socketIn.readObject();
+
+            int itemIndex = serverModel.getMyShop().getInventory().searchToolIndex(readItem.getToolId());
+
+            serverModel.getMyShop().getInventory().getItemList().get(itemIndex).setToolQuantity(newQuantity);
+
+            System.out.println("*******");
+            System.out.println("Item quantity changed:");
+            printItem(readItem);
+        }catch (Exception e){
+            System.out.println("Decrease quantity error!");
+            e.printStackTrace();
+        }
+    }
+    public void removeItemFromInventory(){
+        try {
+            Item readItem = (Item) socketIn.readObject();
+            serverModel.getMyShop().getInventory().getItemList().remove(readItem);
+            System.out.println("*******");
+            System.out.println("Item Removed from server:");
+            printItem(readItem);
+        }catch (Exception e){
+            System.out.println("Remove From Inv. Error");
+            e.printStackTrace();
+        }
+    }
+
+    public void printItem(Item i){
+        serverModel.getMyShop().printHeader();
+        System.out.println(i.toString());
+    }
     /**
      * SupplierCheck
      */
-    public void SupplierCheck() {
-        while (true) {
-            try {
-                String read = (String) socketIn.readObject();
-                int readSuppID = Integer.valueOf(read);
+    public void supplierCheck() {
+        try{
+            String verif = " ";
+            int suppID = 0;
 
-                Supplier searchedSupp = serverModel.getMyShop().searchSupplier(readSuppID);
+            while(!verif.equals("verified")) {
+                String readSuppID = (String) socketIn.readObject();
+                suppID = Integer.parseInt(readSuppID);
 
-                if (searchedSupp != null)
-                    socketOut.writeObject(searchedSupp);
-                else
-                    socketOut.writeObject(null);
+                if (serverModel.getMyShop().isSupplier(suppID))
+                    verif = "verified";
 
-            } catch (Exception e) {
-                System.out.println("Supplier Check Error");
-                e.printStackTrace();
+                socketOut.writeObject(verif);
             }
+                socketOut.writeObject(serverModel.getMyShop().searchSupplier(suppID));
+        }catch (Exception e){
+            System.out.println("Supplier Check Error");
+        }
+    }
+
+    public void receiveNewItem(){
+        try {
+            Item readItem = (Item)socketIn.readObject();
+            serverModel.getMyShop().getInventory().getItemList().add(readItem);
+            System.out.println("*******");
+            System.out.println("New Item Added:");
+            printItem(readItem);
+        }catch (Exception e){
+            System.out.println("Receive New Item Error");
         }
     }
 

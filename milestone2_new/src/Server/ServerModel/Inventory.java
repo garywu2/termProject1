@@ -65,6 +65,14 @@ public class Inventory {
         }
     }
 
+    public int searchToolIndex(int id){
+        for(int i = 0; i < itemList.size(); i++){
+            if(itemList.get(i).getToolId() == id)
+                return i;
+        }
+        return -1;
+    }
+
     /**
      * checks and prints the quantity for item requested
      */

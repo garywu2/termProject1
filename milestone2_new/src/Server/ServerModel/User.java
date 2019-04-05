@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class User implements Serializable {
 
     //MEMBER VARIABLES
+    private static final long serialVersionUID = 3L;
     private String username;
     private String password;
     private ArrayList<Item> itemsOrdered;

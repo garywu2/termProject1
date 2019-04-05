@@ -1,6 +1,7 @@
 package Client.ClientView;
 
-import Server.ServerModel.Item;
+import Server.ServerModel.*;
+
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

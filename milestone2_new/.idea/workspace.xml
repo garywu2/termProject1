@@ -2,9 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98348c67-84b2-4a6e-9bbc-cca8fddbcde6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/ClientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController$AddListen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController$AddListen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController$BrowseListen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController$BrowseListen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController$RemoveListen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController$RemoveListen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController$SaleListen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController$SaleListen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController$SearchByIDListen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController$SearchByIDListen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController$SearchByNameListen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController$SearchByNameListen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientController/MainGUIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientModel/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientModel/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientModel/MainModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientModel/MainModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientModel/Supplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientModel/Supplier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientModel/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientModel/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientView/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Client/ClientView/MainView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Server/ServerController/ServerCommunicationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Server/ServerController/ServerCommunicationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Server/ServerModel/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Server/ServerModel/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Server/ServerModel/Supplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Server/ServerModel/Supplier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/milestone2_new/Server/ServerModel/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/milestone2_new/Server/ServerModel/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ClientController/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ClientController/ClientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ClientModel/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ClientModel/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ClientModel/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ClientModel/MainModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ClientModel/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ClientModel/Supplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ClientModel/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ClientModel/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/ClientView/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ClientView/MainView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerModel/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerModel/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerModel/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerModel/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerModel/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerModel/Supplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerModel/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerModel/User.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,38 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-775">
-              <caret line="42" column="52" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Client/ClientController/GUIController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Client/ClientController/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1867">
-              <caret line="194" column="90" selection-start-line="194" selection-start-column="90" selection-end-line="194" selection-end-column="90" />
+            <state relative-caret-position="-812">
+              <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,22 +55,16 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Client/ClientView/MainView.java">
+        <entry file="file://$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Client/ClientModel/MainModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+            <state relative-caret-position="-1050">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
               <folding>
-                <element signature="e#425#426#0" expanded="true" />
-                <element signature="e#466#467#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#10748#10749#0" expanded="true" />
+                <element signature="e#10779#10780#0" expanded="true" />
+                <element signature="e#10818#10819#0" expanded="true" />
+                <element signature="e#10850#10851#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,8 +73,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="85" column="20" lean-forward="true" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+            <state relative-caret-position="188">
+              <caret line="92" column="48" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Client/ClientView/MainView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,20 +103,24 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Client/ClientModel/Supplier.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientModel/User.java" />
         <option value="$PROJECT_DIR$/src/Server/ServerModel/Item.java" />
+        <option value="$PROJECT_DIR$/src/Server/ServerModel/Supplier.java" />
+        <option value="$PROJECT_DIR$/src/Server/ServerModel/User.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientModel/Item.java" />
-        <option value="$PROJECT_DIR$/src/Client/ClientController/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/Client/ClientModel/MainModel.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientController/ClientController.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientModel/MainModel.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientView/MainView.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientController/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/Server/ServerModel/Inventory.java" />
         <option value="$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java" />
-        <option value="$PROJECT_DIR$/src/Client/ClientView/MainView.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1440" />
+    <option name="width" value="720" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -123,6 +130,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -186,11 +194,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554254511070" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554406862121" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -223,7 +231,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerCommunicationController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ServerCommunicationController" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server.ServerController.ServerCommunicationController" />
       <module name="milestone2_new" />
       <extension name="coverage">
@@ -239,7 +247,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ClientController" />
-        <item itemvalue="Application.ServerCommunicationController" />
       </list>
     </recent_temporary>
   </component>
@@ -257,7 +264,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -265,7 +272,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.17238913" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.16595136" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -273,7 +280,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.28152865" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.03821656" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -289,86 +296,51 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Client/ClientModel/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/ClientModel/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1052">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/suppliers.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/ClientModel/Supplier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-644">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="66">
+          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientModel/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/Supplier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="66">
+          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suppliers.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/GUIController.java">
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        <state relative-caret-position="242">
+          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/ClientModel/MainModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-          <folding>
-            <element signature="e#425#426#0" expanded="true" />
-            <element signature="e#466#467#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="43">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/Shop.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientView/LoginView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1440">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="85" column="20" lean-forward="true" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-775">
-          <caret line="42" column="52" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
+        <state relative-caret-position="-1232">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -377,25 +349,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/ClientController/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1867">
-          <caret line="194" column="90" selection-start-line="194" selection-start-column="90" selection-end-line="194" selection-end-column="90" />
+        <state relative-caret-position="198">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/GUIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientModel/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-515">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/ClientView/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+        <state relative-caret-position="-7">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/Shop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3588">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-856">
+          <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="92" column="48" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-812">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1050">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10748#10749#0" expanded="true" />
+            <element signature="e#10779#10780#0" expanded="true" />
+            <element signature="e#10818#10819#0" expanded="true" />
+            <element signature="e#10850#10851#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

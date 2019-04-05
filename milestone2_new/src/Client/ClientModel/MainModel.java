@@ -1,7 +1,8 @@
 package Client.ClientModel;
 
-import java.util.ArrayList;
 import Server.ServerModel.Item;
+
+import java.util.ArrayList;
 
 
 /**
@@ -19,6 +20,15 @@ public class MainModel {
 
     public MainModel(){
         items = new ArrayList<>();
+    }
+
+    public boolean idExists(int id){
+        for(Item i: items){
+            if(id == i.getToolId())
+                return true;
+        }
+
+        return false;
     }
 
 

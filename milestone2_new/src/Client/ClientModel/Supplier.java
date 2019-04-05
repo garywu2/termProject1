@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 public class Supplier implements Serializable {
 
+    private static final long serialVersionUID = 2L;
     /**
      * ID of supplier
      */

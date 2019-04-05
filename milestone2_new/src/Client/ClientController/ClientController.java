@@ -1,9 +1,8 @@
 package Client.ClientController;
 
-//import Client.ClientModel.*;
 import Client.ClientView.LoginView;
 import Client.ClientView.MainView;
-
+//import Client.ClientModel.*;
 import Server.ServerModel.*;
 
 import java.io.*;
@@ -55,7 +54,7 @@ public class ClientController {
      * @param args command line arguments
      */
     public static void main(String[] args){
-        ClientController cc = new ClientController("localhost", 9999);
+        ClientController cc = new ClientController("localhost", 9100);
 
         cc.importToolsFromServer();
 

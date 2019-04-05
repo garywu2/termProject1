@@ -1,8 +1,10 @@
 package Client.ClientController;
 
-import Client.ClientView.MainView;
+import Client.ClientView.MainView;;
 import Client.ClientModel.MainModel;
-import Server.ServerModel.*;
+//import Client.ClientModel.*;
+import Server.ServerModel.Item;
+import Server.ServerModel.Supplier;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -149,22 +151,31 @@ public class MainGUIController extends GUIController{
 
         public void actionPerformed(ActionEvent e){
             if(e.getSource() == mainView.getSaleButton()){
-                int selectedRow = mainView.getTable().getSelectedRow();
+                try {
+                    clientController.getSocketOut().writeObject("sale");
+                    clientController.getSocketOut().flush();
 
-                if(selectedRow < 0) { // nothing selected
-                    JOptionPane.showMessageDialog(null, "Please select an item");
-                    return;
+                    int selectedRow = mainView.getTable().getSelectedRow();
+
+                    if (selectedRow < 0) { // nothing selected
+                        JOptionPane.showMessageDialog(null, "Please select an item");
+                        return;
+                    }
+
+                    Item selectedItem = mainModel.getItems().get(selectedRow);
+
+                    int sold = Integer.parseInt(JOptionPane.showInputDialog("Enter number of " + selectedItem.getToolName() + " sold:"));
+                    int currQuantity = mainModel.getItems().get(selectedRow).getToolQuantity();
+
+                    //output to server
+                    clientController.getSocketOut().writeObject(String.valueOf(currQuantity - sold));
+                    clientController.getSocketOut().writeObject(selectedItem);
+
+                    mainModel.getItems().get(selectedRow).setToolQuantity(currQuantity - sold);
+                    mainView.getTableModel().setValueAt(currQuantity - sold, selectedRow, 2);
+                }catch(Exception f){
+                f.printStackTrace();
                 }
-
-                Item selectedItem = mainModel.getItems().get(selectedRow);
-
-                System.out.println(selectedRow);
-
-                int sold = Integer.parseInt(JOptionPane.showInputDialog("Enter number of " + selectedItem.getToolName() + " sold:"));
-                int currQuantity = mainModel.getItems().get(selectedRow).getToolQuantity();
-                mainModel.getItems().get(selectedRow).setToolQuantity(currQuantity - sold);
-
-                mainView.getTableModel().setValueAt(currQuantity - sold, selectedRow, 2);
             }
         }
 
@@ -174,37 +185,120 @@ public class MainGUIController extends GUIController{
 
         public void actionPerformed(ActionEvent e){
             if(e.getSource() == mainView.getAddButton()){
-                try {
+              try{
+                  clientController.getSocketOut().writeObject("add");
+              }catch (Exception f){
+                  f.printStackTrace();
+              }
 
-                    int id = Integer.parseInt(JOptionPane.showInputDialog("Enter new tool ID:"));
-                    String name = JOptionPane.showInputDialog("Enter new tool name: ");
-                    int quantity = Integer.parseInt(JOptionPane.showInputDialog("Enter new tool quantity: "));
-                    double price = Double.parseDouble(JOptionPane.showInputDialog("Enter new tool price"));
-                    int suppID = Integer.parseInt(JOptionPane.showInputDialog("Enter new tool supplier ID: "));
+              int id = intInputPrompt("Enter new tool ID: (integer)");
 
-                    clientController.getSocketOut().writeObject(String.valueOf(suppID));
-                    Supplier readSupp = (Supplier) clientController.getSocketIn().readObject();
+              while(mainModel.idExists(id)){
+                  JOptionPane.showMessageDialog(null, "ID already exists, try again!");
+                  id = intInputPrompt("Enter new tool ID: (integer)");
+              }
 
-                    if(readSupp == null){
-                        JOptionPane.showMessageDialog(null, "Supplier not found!");
-                    }
+              String name = JOptionPane.showInputDialog("Enter new tool name:");
+              int quantity = intInputPrompt("Enter new tool quantity: (integer)");
+              double price = doubleInputPrompt("Enter new tool price: (double");
 
-                    while(readSupp == null){
-                        suppID = Integer.parseInt(JOptionPane.showInputDialog("Enter new tool supplier ID: "));
-                        clientController.getSocketOut().writeObject(String.valueOf(suppID));
-                        readSupp = (Supplier) clientController.getSocketIn().readObject();
-                    }
+              String verif = " ";
+              int suppID = 0;
 
-                    Item newItem = new Item(id, name, quantity, price, readSupp);
-                    mainModel.getItems().add(newItem);
+              while(!verif.equals("verified")) {
+                  suppID = intInputPrompt("Enter new tool supplier ID: (Integer)");
+                  verif = sendSuppID(suppID);
+                  if(!verif.equals("verified"))
+                      JOptionPane.showMessageDialog(null, "Supplier doesn't exist, try again!");
+              }
 
-                    String[] newItemData = {String.valueOf(id), name, String.valueOf(quantity), String.valueOf(price), readSupp.getName()};
-                    mainView.getTableModel().addRow(newItemData);
-                }catch(Exception f){
-                    System.out.println("Add Listen Error");
-                    f.printStackTrace();
-                }
+              Supplier newSupp = readNewSupplier();
+              Item newItem = new Item(id, name, quantity, price, newSupp);
+              addItemToTable(newItem);
+              sendItemData(newItem);
             }
+        }
+
+        public Supplier readNewSupplier(){
+            Supplier supp = null;
+            try{
+                supp = (Supplier)clientController.getSocketIn().readObject();
+            }catch (Exception e){
+                System.out.println("New Supp read error");
+            }
+            return supp;
+        }
+
+        public void addItemToTable(Item newItem){
+            String[] data = {String.valueOf(newItem.getToolId()),
+                             newItem.getToolName(),
+                             String.valueOf(newItem.getToolQuantity()),
+                             String.valueOf(newItem.getToolPrice()),
+                             newItem.getToolSupplier().getId() + " - " + newItem.getToolSupplier().getName()};
+
+            mainModel.getItems().add(newItem);
+            mainView.getTableModel().addRow(data);
+        }
+
+        public void sendItemData(Item newItem){
+            try {
+                clientController.getSocketOut().writeObject(newItem);
+            }catch(IOException e){
+                System.out.println("Client: item data writing error");
+                e.printStackTrace();
+            }
+        }
+
+        public String sendSuppID(int suppID){
+            String verif = null;
+
+            try {
+                clientController.getSocketOut().writeObject(String.valueOf(suppID));
+                verif = (String)clientController.getSocketIn().readObject();
+            }catch(Exception f){
+                System.out.println("Supplier ID writing error from client");
+                f.printStackTrace();
+            }
+
+            return verif;
+        }
+
+        public int intInputPrompt(String n){
+            String input = null;
+            int num = 0;
+            while(input == null || num < 0){
+
+                try {
+                    input = JOptionPane.showInputDialog(n);
+                    num = Integer.parseInt(input);
+                }catch (NumberFormatException e){
+                    System.out.println("Add Item NFE");
+                    JOptionPane.showMessageDialog(null, "Try again!");
+                    input = null;
+                }
+
+            }
+
+            return num;
+        }
+
+        public double doubleInputPrompt(String n){
+            String input = null;
+            double num = 0;
+            while(input == null || num < 0){
+
+                try {
+                    input = JOptionPane.showInputDialog(n);
+                    num = Double.parseDouble(input);
+                }catch (NumberFormatException e){
+                    System.out.println("Add Item NFE");
+                    JOptionPane.showMessageDialog(null, "Try again!");
+                    input = null;
+                }
+
+            }
+
+            return num;
         }
 
     }
@@ -213,6 +307,12 @@ public class MainGUIController extends GUIController{
 
         public void actionPerformed(ActionEvent e){
             if(e.getSource() == mainView.getRemoveButton()){
+                try {
+                    clientController.getSocketOut().writeObject("remove");
+                }catch (Exception f){
+                    f.printStackTrace();
+                }
+
                 int selectedRow = mainView.getTable().getSelectedRow();
 
                 if(selectedRow < 0) { // nothing selected
@@ -224,6 +324,17 @@ public class MainGUIController extends GUIController{
 
                 mainView.getTableModel().removeRow(selectedRow);
                 mainModel.getItems().remove(selectedItem);
+
+                sendItemData(selectedItem);
+            }
+        }
+
+        public void sendItemData(Item newItem){
+            try {
+                clientController.getSocketOut().writeObject(newItem);
+            }catch(IOException e){
+                System.out.println("Client: item data writing error");
+                e.printStackTrace();
             }
         }
 
