@@ -3,6 +3,9 @@ package Client.ClientController;
 /**
  * This class is an abstract class with acts as the super class for all GUI
  * Controllers
+ *  @author  Harsohail Brar
+ *  @version 4.10.0
+ *  @since April 5, 2019
  */
 public abstract class GUIController {
 

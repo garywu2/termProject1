@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
  * This class is responsible for controlling the login view
  * as well as creating the main window after login
  *
- * @author  Gary Wu, Harsohail Brar, Ryan Holt
+ * @author  Harsohail Brar
  * @version 4.10.0
  * @since April 5, 2019
  */
