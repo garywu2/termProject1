@@ -17,7 +17,7 @@ import java.net.Socket;
  * the user enters a correct username and pass. It also creates the new sockets
  * for input and output and exports the tools into the client
  *
- * @author Gary Wu, Harsohail Brar, Ryan Holt
+ * @author Ryan Holt
  * @version 4.10.0
  * @since April 5, 2019
  */
