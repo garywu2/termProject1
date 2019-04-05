@@ -14,7 +14,7 @@ import java.net.*;
  * and holding the LoginController
  * Overall the client controller is used for communication with
  * the server
- * @author  Gary Wu, Harsohail Brar, Ryan Holt
+ * @author  Ryan Holt
  * @version 4.10.0
  * @since April 5, 2019
  */

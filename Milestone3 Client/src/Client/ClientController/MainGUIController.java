@@ -18,7 +18,7 @@ import java.io.IOException;
  * objects of the main view and model
  * Overall the purpose of this class is to add the action listeners
  * to the various buttons in the main view
- * @author  Gary Wu, Harsohail Brar, Ryan Holt
+ * @author  Harsohail Brar
  * @version 4.10.0
  * @since April 5, 2019
  */

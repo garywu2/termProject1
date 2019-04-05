@@ -7,7 +7,7 @@ import utils.*;
 /**
  * This is the server model for the shop which helps successful import all
  * items and creates the new shop.
- * @author  Harsohail Brar
+ * @author  Ryan Holt
  * @version 4.10.0
  * @since April 5, 2019
  *

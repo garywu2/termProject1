@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * The mainView class holds the entire GUI after you log in
  * The main purpose of this class is to create the GUI as well as the
  * different buttons
- * @author  Gary Wu, Harsohail Brar, Ryan Holt
+ * @author  Gary Wu
  * @version 4.10.0
  * @since April 5, 2019
  */

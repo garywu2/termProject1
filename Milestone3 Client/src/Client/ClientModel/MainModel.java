@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * holds the array list of items
  * Overall the purpose of this class is to hold
  * the arrayList of Items
- * @author  Gary Wu, Harsohail Brar, Ryan Holt
+ * @author  Harsohail Brar
  * @version 4.10.0
  * @since April 5, 2019
  */

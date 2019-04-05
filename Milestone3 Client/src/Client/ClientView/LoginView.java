@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 /**
  * This class is responsible for the Login GUI
- * @author  Gary Wu, Harsohail Brar, Ryan Holt
+ * @author  Gary Wu
  * @version 4.10.0
  * @since April 5, 2019
  */
