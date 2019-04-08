@@ -8,6 +8,8 @@ import Client.ClientModel.MainModel;
 import utils.*;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -60,7 +62,7 @@ public class MainGUIController extends GUIController{
             if(e.getSource() == mainView.getBrowseButton()){
                 try{
                     if(mainView.getTable() == null){
-                        mainView.createTable(mainModel.getItems());
+                        mainView.createTable(mainModel.getTableModel());
                     }
                 }catch (Exception f){
                     f.printStackTrace();

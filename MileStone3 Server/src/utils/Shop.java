@@ -1,88 +1,22 @@
 package utils;
 
-import java.util.ArrayList;
 import java.io.*;
+import java.sql.Connection;
 import java.util.Scanner;
 
 /**
- * This is the shop class which holds the order list, supplier list and
- * the inventory of the shop
+ * TODO
  */
 public class Shop implements Constants{
-    /**
-     * list of orders placed for items of quantity under 40
-     */
-    private ArrayList<Order> orderList;
+	 private Connection myConnection;
+	 private Inventory myInventory;
+    
+	 public Shop(Connection c) {
+    	 myConnection = c;
+    	 myInventory = new Inventory(c);
+     }
 
-    /**
-     * list of suppliers that supply to shop
-     */
-    private ArrayList<Supplier> supplierList;
-
-    /**
-     * inventory where all items are stored
-     */
-    private Inventory inventory;
-
-    /**
-     * Constructs a Shop object with the specified values for an array list
-     * of orders, array list of suppliers and an inventory object.
-     * The values of the data fields are supplied by the given parameters.
-     * @param orders order list of orders placed
-     * @param suppliers supplier list
-     * @param inventory inventory object which holds all items of the shop
-     */
-    public Shop(ArrayList<Order> orders, ArrayList<Supplier> suppliers, Inventory inventory){
-        this.orderList = orders;
-        this.supplierList = suppliers;
-        this.inventory = inventory;
-    }
-
-    /**
-     * imports suppliers from suppliers.txt
-     * @throws FileNotFoundException
-     */
-    public void importSuppliers() throws FileNotFoundException{
-        String directory = System.getProperty("user.dir");
-        String path = directory+File.separator+"suppliers.txt";
-        File file = new File(path);
-        Scanner input = new Scanner(file);
-
-        String rawData;
-        String[] splitData;
-
-        while(input.hasNextLine()){
-            rawData = input.nextLine();
-            splitData = rawData.split(";");
-
-            supplierList.add(new Supplier(Integer.parseInt(splitData[0]), splitData[1], splitData[2], splitData[3]));
-        }
-    }
-
-    /**
-     * imports tools from items.txt
-     * @throws FileNotFoundException
-     */
-    public void importTools() throws FileNotFoundException{
-        String directory = System.getProperty("user.dir");
-        String path = directory+File.separator+"items.txt";
-        File file = new File(path);
-        Scanner input = new Scanner(file);
-
-        String rawData;
-        String[] splitData;
-
-        while(input.hasNextLine()){
-            rawData = input.nextLine();
-            splitData = rawData.split(";");
-
-            Supplier matchedSupplier = searchSupplier(Integer.parseInt(splitData[4]));
-
-            inventory.getItemList().add(new Item(Integer.parseInt(splitData[0]), splitData[1], Integer.parseInt(splitData[2]), Double.parseDouble(splitData[3]), matchedSupplier));
-        }
-    }
-
-    /**
+	/**
      * searches supplier from supplier list adn returns
      * a supplier object
      * @param id id of supplier being searched
@@ -100,8 +34,6 @@ public class Shop implements Constants{
      * prints all tools (inventory)
      */
     public void exportAllTools(){
-        printHeader();
-        System.out.println();
         for(int i = 0; i < inventory.getItemList().size(); i++)
             System.out.println(inventory.getItemList().get(i).toString());
     }
@@ -131,14 +63,6 @@ public class Shop implements Constants{
 
         return num;
     }
-
-    /**
-     * prints header
-     */
-    public void printHeader(){
-        System.out.printf("%-5s %-20s %-10s %-7s %-15s\n", "ID", "Name", "Quantity", "Price", "Supplier ID" );
-    }
-
 
     /**
      * prints the orders placed

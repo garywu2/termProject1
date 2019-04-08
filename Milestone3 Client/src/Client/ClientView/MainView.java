@@ -87,25 +87,9 @@ public class MainView extends JFrame {
      * Creates a table of the objects and displays it on the GUI
      * @param items the list of Items
      */
-    public void createTable(ArrayList<Item> items){
-        String[][] data = new String[items.size()][5];
-
-        for(int i = 0; i < items.size(); i++){
-            data[i][0] = String.valueOf(items.get(i).getToolId());
-            data[i][1] = items.get(i).getToolName();
-            data[i][2] = String.valueOf(items.get(i).getToolQuantity());
-            data[i][3] = String.valueOf(items.get(i).getToolPrice());
-            data[i][4] = items.get(i).getToolSupplier().getId() + " - " + items.get(i).getToolSupplier().getName();
-        }
-
-        String[] header = {"ID", "Name", "Quantity", "Price", "Supplier"};
-        tableModel = new DefaultTableModel(data, header) {
-            public boolean isCellEditable(int rowIndex, int mColIndex) {
-                return false;
-            }
-        };
-
-        table = new JTable(tableModel);
+    public void createTable(DefaultTableModel tableModel){
+    	table = new JTable(tableModel);
+    	table.getTableHeader().setReorderingAllowed(false);
         scrollPane = new JScrollPane(table);
 
         centrePanel.add(scrollPane, BorderLayout.LINE_END);

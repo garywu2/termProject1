@@ -67,13 +67,7 @@ public class ClientController {
      */
     public void importToolsFromServer(){
         try {
-            int numItems = Integer.parseInt((String)socketIn.readObject());
-
-            while(numItems > 0){
                 mainGUIController.getMainModel().getItems().add((Item)socketIn.readObject());
-                numItems--;
-            }
-
             System.out.println("Imported Tools From Server!");
         }catch(Exception e){
             e.printStackTrace();

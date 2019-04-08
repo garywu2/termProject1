@@ -4,6 +4,8 @@ package Client.ClientModel;
 import utils.*;
 import java.util.ArrayList;
 
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  * This is the main model of the class which
@@ -15,34 +17,33 @@ import java.util.ArrayList;
  * @since April 5, 2019
  */
 public class MainModel {
+    private DefaultTableModel tableModel;
 
-    //MEMBER VARIABLES
-    private ArrayList<Item> items;
+//    /**
+//     * Checks if id already exists
+//     * @param id id being checked
+//     * @return true if exists, false otherwise
+//     */
+//    public boolean idExists(int id){
+//        for(Item i: items){
+//            if(id == i.getToolId())
+//                return true;
+//        }
+//
+//        return false;
+//    }
 
-    /**
-     * Constructs a MainModel object
-     */
-    public MainModel(){
-        items = new ArrayList<>();
-    }
+	/**
+	 * @return the tableModel
+	 */
+	public DefaultTableModel getTableModel() {
+		return tableModel;
+	}
 
-    /**
-     * Checks if id already exists
-     * @param id id being checked
-     * @return true if exists, false otherwise
-     */
-    public boolean idExists(int id){
-        for(Item i: items){
-            if(id == i.getToolId())
-                return true;
-        }
-
-        return false;
-    }
-
-    //getters and setters
-    public ArrayList<Item> getItems() {
-        return items;
-    }
-
+	/**
+	 * @param tableModel the tableModel to set
+	 */
+	public void setTableModel(DefaultTableModel tableModel) {
+		this.tableModel = tableModel;
+	}
 }
