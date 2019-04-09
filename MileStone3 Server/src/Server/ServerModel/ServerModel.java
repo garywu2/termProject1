@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import utils.*;
 /**
  * This is the server model for the shop which helps successful import all
- * items and creates the new shop.
+ * items and creates the new shop .
  * @author  Ryan Holt
  * @version 4.10.0
  * @since April 5, 2019
@@ -20,14 +20,14 @@ public class ServerModel {
     /**
      * Constructor for the shop which creates new Array lists of
      * orders suppliers and items and create new inventory.  Also
-     * creates the shop and imports all the suppliers and tools
+     * creates the shop and imports all the suppliers and tools fro
      */
     public ServerModel(){
         ArrayList<Order> orders = new ArrayList<>();
         ArrayList<Supplier> suppliers = new ArrayList<>();
         ArrayList<Item> items = new ArrayList<>();
         Inventory inventory = new Inventory(items);
-
+        
         myShop = new Shop(orders, suppliers, inventory);
         try {
             myShop.importSuppliers();
