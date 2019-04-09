@@ -1,6 +1,8 @@
 package utils;
 
 import java.io.Serializable;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * This is the Item class which holds information of each tool
@@ -48,6 +50,23 @@ public class Item implements Serializable {
         toolQuantity = quantity;
         toolPrice = price;
         toolSupplier = supplier;
+    }
+
+    /**
+     * Constructs a supplier object with database result set
+     * @param rs result set
+     */
+    public Item(ResultSet rs, Supplier supp) {
+        try {
+            this.toolId = rs.getInt(1);
+            this.toolName = rs.getString(2);
+            this.toolPrice = rs.getDouble(3);
+            this.toolQuantity = rs.getInt(4);
+            this.toolSupplier = supp;
+        } catch (SQLException e){
+            System.out.println("Supplier creation error (ResultSet)");
+            e.printStackTrace();
+        }
     }
 
     /**

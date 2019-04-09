@@ -1,7 +1,6 @@
 package Client.ClientController;
 
 import Client.ClientView.LoginView;
-//import Server.ServerModel.*;
 import utils.*;
 
 import javax.swing.*;

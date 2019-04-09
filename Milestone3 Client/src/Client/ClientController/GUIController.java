@@ -1,5 +1,7 @@
 package Client.ClientController;
 
+import javax.swing.*;
+
 /**
  * This class is an abstract class with acts as the super class for all GUI
  * Controllers
@@ -7,7 +9,7 @@ package Client.ClientController;
  * @version 4.10.0
  * @since April 5, 2019
  */
-public abstract class GUIController {
+public abstract class GUIController extends JFrame {
 
     /**
      * Client Controller consisting of sockets

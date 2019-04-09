@@ -2,19 +2,21 @@ package Client.ClientController;
 
 import Client.ClientView.LoginView;
 import Client.ClientView.MainView;
-//import Client.ClientModel.*;
-//import Server.ServerModel.*;
 import utils.*;
 
+import javax.swing.table.DefaultTableModel;
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
+import java.util.Vector;
 
 /**
  * This class is responsible for communicating with the server
  * and holding the LoginController
  * Overall the client controller is used for communication with
  * the server
- * @author  Ryan Holt
+ *
+ * @author Ryan Holt
  * @version 4.10.0
  * @since April 5, 2019
  */
@@ -30,52 +32,51 @@ public class ClientController {
 
     /**
      * Constructs a Client controller object
+     *
      * @param serverName name of server
      * @param portNumber port number
      */
-    public ClientController(String serverName, int portNumber){
-        try{
+    public ClientController(String serverName, int portNumber) {
+        try {
             aSocket = new Socket(serverName, portNumber);
 
             socketIn = new ObjectInputStream(aSocket.getInputStream());
             socketOut = new ObjectOutputStream(aSocket.getOutputStream());
 
-            MainView mainView = new MainView(750,550);
+            MainView mainView = new MainView(800, 550);
             LoginView loginView = new LoginView(250, 175);
 
             loginController = new LoginController(loginView, this);
             mainGUIController = new MainGUIController(mainView, this);
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     /**
      * runs the client side
+     *
      * @param args command line arguments
      */
-    public static void main(String[] args){
-        ClientController cc = new ClientController("localhost", 9200);
+    public static void main(String[] args) {
+        ClientController cc = new ClientController("localhost", 9000);
 
-        cc.importToolsFromServer();
+        cc.mainGUIController.importItemsFromServer();
+        //cc.importTableModelFromServer();
 
         cc.showMainWindow();
     }
 
+
     /**
-     * imports tools from server
+     * imports and sets tool table model from server
      */
-    public void importToolsFromServer(){
+    public void importTableModelFromServer() {
         try {
-            int numItems = Integer.parseInt((String)socketIn.readObject());
-
-            while(numItems > 0){
-                mainGUIController.getMainModel().getItems().add((Item)socketIn.readObject());
-                numItems--;
-            }
-
-            System.out.println("Imported Tools From Server!");
-        }catch(Exception e){
+            DefaultTableModel readTableModel = (DefaultTableModel) socketIn.readObject();
+            mainGUIController.getMainView().setTableModel(readTableModel);
+        } catch (Exception e) {
+            System.out.println("ClientController: importTableModelFromServer error");
             e.printStackTrace();
         }
     }
@@ -83,15 +84,15 @@ public class ClientController {
     /**
      * verifies if user has logged in, then makes Main Window visible
      */
-    public void showMainWindow(){
-        while(!loginController.isVerified()){
+    public void showMainWindow() {
+        while (!loginController.isVerified()) {
             mainGUIController.getMainView().setVisible(false);
         }
 
         mainGUIController.getMainView().setVisible(true);
     }
 
-    //getters and setters
+    //GETTERS AND SETTERS
     public ObjectOutputStream getSocketOut() {
         return socketOut;
     }

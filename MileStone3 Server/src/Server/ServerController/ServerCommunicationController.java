@@ -1,92 +1,77 @@
 package Server.ServerController;
 
-//import Server.ServerModel.*;
-
-import utils.*;
-import Server.ServerModel.ServerModel;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.*;
+import java.util.ArrayList;
 
-/**
- * The Server communications class serves to create the different input and
- * output screens as well as start off the GUI with the log in menu and ensuring
- * the user enters a correct username and pass. It also creates the new sockets
- * for input and output and exports the tools into the client
- *
- * @author Ryan Holt
- * @version 4.10.0
- * @since April 5, 2019
- */
-public class ServerCommunicationController {
+import utils.*;
 
-    private final int PORT = 9200;
+public class ServerCommunicationController implements Runnable {
+
     private Socket aSocket;
     private ObjectInputStream socketIn;
     private ObjectOutputStream socketOut;
-    private ServerSocket serverSocket;
-    private ServerModel serverModel;
+    private ServerController serverController;
 
-    /**
-     * This is the constructor for the class and it adds a new socket and creates
-     * the output stream as well as creates a new object of the serverModel
-     */
-    public ServerCommunicationController() {
+    public ServerCommunicationController(Socket s, ServerController serverController) {
         try {
-
-            serverSocket = new ServerSocket(PORT);
-            System.out.println("Server is running");
-
-            aSocket = serverSocket.accept();
-            System.out.println("After accept");
+            aSocket = s;
+            setServerController(serverController);
 
             socketOut = new ObjectOutputStream(aSocket.getOutputStream());
 
-            serverModel = new ServerModel();
-
+            printIPInfo();
         } catch (IOException e) {
-
-            System.out.println("Create new socket error");
-            System.out.println(e.getMessage());
-
+            System.out.println("ServerCommController: Create ServerCommController Error");
+            e.printStackTrace();
         }
     }
 
-    /**
-     * This is the main String for the Server which creates the input stream and
-     * then exports the tools and checks to see if the user entered right username
-     * and password
-     */
-    public static void main(String[] args) {
-        ServerCommunicationController myServer = new ServerCommunicationController();
-
-        myServer.createInputStream(); // after connects with client (client creates output stream)
-
-        myServer.exportToolsToClient();
-
-        myServer.verifyLogin();
-
-        myServer.communicate();
+    @Override
+    public void run() {
+        createInputStream();
+        exportItemsToClient();
+        verifyLogin();
+        communicate();
     }
 
-    /**
-     * Communicates with the client. Receives a serialized String object from client
-     * then calls server methods accordingly
-     */
     public void communicate() {
         while (true) {
             try {
                 String input = (String) socketIn.readObject();
-                if (input.equals("add")) {
-                    supplierCheck();
-                    receiveNewItem();
-                } else if (input.equals("remove")) {
-                    removeItemFromInventory();
-                } else if (input.equals("sale")) {
-                    decreaseQuantityFromInventory();
+
+                switch (input) {
+                    case "searchByID":
+                        searchItemByIDFromDB();
+                        exportItemsToClient();
+                        break;
+
+                    case "searchByName":
+                        searchItemByNameFromDB();
+                        exportItemsToClient();
+                        break;
+
+                    case "sale":
+                        saleItemFromDB();
+                        exportItemsToClient();
+                        break;
+
+                    case "add":
+                        addItemToDB();
+                        exportItemsToClient();
+                        break;
+
+                    case "remove":
+                        removeItemFromDB();
+                        exportItemsToClient();
+                        break;
+
+                    case "refresh":
+                        exportItemsToClient();
+                        break;
+
                 }
             } catch (Exception e) {
             }
@@ -94,99 +79,134 @@ public class ServerCommunicationController {
     }
 
     /**
-     * Decreases item quantity from server inventory as requested by client
+     * TODO REMOVE
      */
-    public void decreaseQuantityFromInventory() {
-        try {
-            String verif = (String) socketIn.readObject();
+    public void exportItemsToClient() {
+        ArrayList<Item> items = serverController.getDatabaseController().getDatabaseModel().getItemsFromDB();
 
-            if (verif.equals("reset"))
+        try {
+            socketOut.writeObject(String.valueOf(items.size()));
+
+            for (Item i : items) {
+                socketOut.writeObject(i);
+            }
+        } catch (IOException e) {
+            System.out.println("Exporting items from server error");
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * searches item requested from database by item id
+     */
+    public void searchItemByIDFromDB() {
+        try {
+            int id = Integer.parseInt((String) socketIn.readObject());
+            Item searchedItem = serverController.getDatabaseController().getDatabaseModel().searchItemByID(id);
+
+            socketOut.writeObject(searchedItem);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * searches item requested from database by item name
+     */
+    public void searchItemByNameFromDB() {
+        try {
+            String name = (String) socketIn.readObject();
+            Item searchedItem = serverController.getDatabaseController().getDatabaseModel().searchItemByName(name);
+
+            socketOut.writeObject(searchedItem);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * sells item from database (decreases quantity) as requested
+     */
+    public void saleItemFromDB() {
+        try {
+            String status = (String) socketIn.readObject();
+
+            if (status.equals("reset"))
                 return;
 
+            int itemID = Integer.parseInt((String) socketIn.readObject());
             int newQuantity = Integer.parseInt((String) socketIn.readObject());
 
-            Item readItem = (Item) socketIn.readObject();
-
-            int itemIndex = serverModel.getMyShop().getInventory().searchToolIndex(readItem.getToolId());
-
-            serverModel.getMyShop().getInventory().getItemList().get(itemIndex).setToolQuantity(newQuantity);
-
-            System.out.println("*******");
-            System.out.println("Item quantity changed:");
-            printItem(readItem);
+            boolean updated = serverController.getDatabaseController().getDatabaseModel().decreaseItemQuantity(itemID, newQuantity);
+            if(updated){
+                socketOut.writeObject("updated");
+            }else{
+                socketOut.writeObject("not updated");
+            }
         } catch (Exception e) {
-            System.out.println("Decrease quantity error!");
             e.printStackTrace();
         }
     }
 
     /**
-     * Removes item from inventory as requested by client
+     * adds items to database
      */
-    public void removeItemFromInventory() {
+    public void addItemToDB() {
         try {
-            String verif = (String) socketIn.readObject();
+            //reads new item id
+            int itemID = Integer.parseInt((String) socketIn.readObject());
 
-            if (verif.equals("reset"))
+            //checks if item already exists
+            while (serverController.getDatabaseController().getDatabaseModel().itemExists(itemID)) {
+                socketOut.writeObject("true");
+                itemID = Integer.parseInt((String) socketIn.readObject());
+            }
+
+            socketOut.writeObject("false"); // id OK, doesn't exists
+
+            //reads supplier ID of new item
+            int suppID = Integer.parseInt((String) socketIn.readObject());
+
+            //checks if supplier exists
+            while (!serverController.getDatabaseController().getDatabaseModel().supplierExists(suppID)) {
+                socketOut.writeObject("not verified");
+                suppID = Integer.parseInt((String) socketIn.readObject());
+            }
+
+            socketOut.writeObject("verified");
+
+            //sends supplier to client
+            Supplier searchedSupp = serverController.getDatabaseController().getDatabaseModel().searchSupplierFromDB(suppID);
+            socketOut.writeObject(searchedSupp);
+
+            //recieves new item
+            Item newItem = (Item) socketIn.readObject();
+
+            //add item to database
+            serverController.getDatabaseController().getDatabaseModel().addItemToDB(newItem);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void removeItemFromDB() {
+        try {
+            String status = (String) socketIn.readObject();
+
+            if (status.equals("reset"))
                 return;
 
-            Item readItem = (Item) socketIn.readObject();
+            int itemID = Integer.parseInt((String) socketIn.readObject());
 
-            serverModel.getMyShop().getInventory().getItemList().remove(readItem);
-            System.out.println("*******");
-            System.out.println("Item Removed from server:");
-            printItem(readItem);
-        } catch (Exception e) {
-            System.out.println("Remove From Inv. Error");
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Prints an item to the screen
-     *
-     * @param i Item being printed
-     */
-    public void printItem(Item i) {
-        serverModel.getMyShop().printHeader();
-        System.out.println(i.toString());
-    }
-
-    /**
-     * Takes supplier id from user input and checks if supplier exists
-     */
-    public void supplierCheck() {
-        try {
-            String verif = " ";
-            int suppID = 0;
-
-            while (!verif.equals("verified")) {
-                String readSuppID = (String) socketIn.readObject();
-                suppID = Integer.parseInt(readSuppID);
-
-                if (serverModel.getMyShop().isSupplier(suppID))
-                    verif = "verified";
-
-                socketOut.writeObject(verif);
+            //remove item from database
+            boolean updated = serverController.getDatabaseController().getDatabaseModel().removeItemFromDB(itemID);
+            if(updated){
+                socketOut.writeObject("updated");
+            }else{
+                socketOut.writeObject("not updated");
             }
-            socketOut.writeObject(serverModel.getMyShop().searchSupplier(suppID));
         } catch (Exception e) {
-            System.out.println("Supplier Check Error");
-        }
-    }
-
-    /**
-     * Receives new item from the client
-     */
-    public void receiveNewItem() {
-        try {
-            Item readItem = (Item) socketIn.readObject();
-            serverModel.getMyShop().getInventory().getItemList().add(readItem);
-            System.out.println("*******");
-            System.out.println("New Item Added:");
-            printItem(readItem);
-        } catch (Exception e) {
-            System.out.println("Receive New Item Error");
+            e.printStackTrace();
         }
     }
 
@@ -202,6 +222,19 @@ public class ServerCommunicationController {
         }
     }
 
+    private void sendUpdatedTableModel() {
+        try {
+            serverController.getDatabaseController().getDatabaseModel().createDefaultTableModel();
+            if (serverController.getDatabaseController().getDatabaseModel().getTableModel() != null) {
+                socketOut.writeObject(serverController.getDatabaseController().getDatabaseModel().getTableModel());
+            } else {
+                socketOut.writeObject("Unable to update model.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Verifies the log in by running an infinite loop that only stops if the user
      * has entered a valid username and password
@@ -213,13 +246,13 @@ public class ServerCommunicationController {
             while (!verified) {
                 User readUser = (User) socketIn.readObject();
 
-                if (serverModel.verifyUser(readUser)) {
+                if (serverController.getDatabaseController().getDatabaseModel().verifyUser(readUser)) {
                     socketOut.writeObject("verified");
-                    System.out.println("User Verified!");
+                    System.out.println("Login Success!");
                     verified = true;
                     return;
                 } else {
-                    socketOut.writeObject("notVerified");
+                    socketOut.writeObject("Invalid Username and Password");
                 }
 
                 socketOut.flush();
@@ -229,19 +262,19 @@ public class ServerCommunicationController {
         }
     }
 
-    /**
-     * Exports all the object of tools to the client
-     */
-    public void exportToolsToClient() {
+    public void printIPInfo() {
+        InetAddress ip;
         try {
-            socketOut.writeObject(String.valueOf(serverModel.getMyShop().getInventory().getItemList().size()));
-            for (Item i : serverModel.getMyShop().getInventory().getItemList()) {
-                socketOut.writeObject(i);
-            }
-            System.out.println("Successful tools export to Client");
-        } catch (IOException e) {
-            System.out.println("Tool Exporting Error");
+            ip = InetAddress.getLocalHost();
+            System.out.println("You current IP address: " + ip);
+        } catch (UnknownHostException e) {
+            System.out.println("IP Print error");
             e.printStackTrace();
         }
+    }
+
+    //GETTERS AND SETTERS
+    public void setServerController(ServerController sc) {
+        serverController = sc; // 2-way association
     }
 }

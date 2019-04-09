@@ -22,10 +22,7 @@ public class MainView extends JFrame {
     //MEMBER VARIABLES
     private JPanel titlePanel, centrePanel, buttonPanel;
 
-    private JButton browseButton, searchByIDButton, searchByNameButton, saleButton, addButton, removeButton;
-
-    private JTextField selectedItem;
-    private JLabel selectedItemLabel;
+    private JButton browseButton, searchByIDButton, searchByNameButton, saleButton, addButton, removeButton, refreshButton;
 
     private DefaultTableModel tableModel;
     private JScrollPane scrollPane;
@@ -52,10 +49,7 @@ public class MainView extends JFrame {
         saleButton = new JButton("Sale");
         addButton = new JButton("Add Item");
         removeButton = new JButton("Remove Item");
-
-        selectedItem = new JTextField(30);
-        selectedItemLabel = new JLabel("Selected Item");
-        selectedItemLabel.setLabelFor(selectedItem);
+        refreshButton = new JButton("Refresh");
 
         setTitle("Main Window");
         setSize(width, height);
@@ -72,6 +66,7 @@ public class MainView extends JFrame {
         buttonPanel.add(saleButton);
         buttonPanel.add(addButton);
         buttonPanel.add(removeButton);
+        buttonPanel.add(refreshButton);
 
         pack();
         setSize(width, height);
@@ -85,27 +80,28 @@ public class MainView extends JFrame {
 
     /**
      * Creates a table of the objects and displays it on the GUI
-     * @param items the list of Items
      */
-    public void createTable(ArrayList<Item> items){
-        String[][] data = new String[items.size()][5];
+    public void createTable(){
+        table = new JTable(tableModel);
+        table.getTableHeader().setReorderingAllowed(false);
+        scrollPane = new JScrollPane(table);
 
-        for(int i = 0; i < items.size(); i++){
-            data[i][0] = String.valueOf(items.get(i).getToolId());
-            data[i][1] = items.get(i).getToolName();
-            data[i][2] = String.valueOf(items.get(i).getToolQuantity());
-            data[i][3] = String.valueOf(items.get(i).getToolPrice());
-            data[i][4] = items.get(i).getToolSupplier().getId() + " - " + items.get(i).getToolSupplier().getName();
-        }
+        centrePanel.add(scrollPane, BorderLayout.LINE_END);
+        revalidate();
+    }
 
-        String[] header = {"ID", "Name", "Quantity", "Price", "Supplier"};
-        tableModel = new DefaultTableModel(data, header) {
-            public boolean isCellEditable(int rowIndex, int mColIndex) {
-                return false;
-            }
-        };
+    /**
+     * Updates table
+     */
+    public void updateTable(){
+        if(centrePanel != null)
+            remove(centrePanel);
+
+        centrePanel = new JPanel();
+        add("Center", centrePanel);
 
         table = new JTable(tableModel);
+        table.getTableHeader().setReorderingAllowed(false);
         scrollPane = new JScrollPane(table);
 
         centrePanel.add(scrollPane, BorderLayout.LINE_END);
@@ -160,6 +156,14 @@ public class MainView extends JFrame {
         removeButton.addActionListener(listenerForRemoveButton);
     }
 
+    /**
+     * Adds an action listener to the refresh button
+     * @param listenerForRefreshButton
+     */
+    public void addRefreshListener(ActionListener listenerForRefreshButton){
+        refreshButton.addActionListener(listenerForRefreshButton);
+    }
+
 
 
     //getters and setters
@@ -188,13 +192,14 @@ public class MainView extends JFrame {
         return removeButton;
     }
 
+    public JButton getRefreshButton() {
+        return refreshButton;
+    }
+
     public JPanel getCentrePanel() {
         return centrePanel;
     }
 
-    public JTextField getSelectedItem() {
-        return selectedItem;
-    }
 
     public JTable getTable() {
         return table;
@@ -206,5 +211,9 @@ public class MainView extends JFrame {
 
     public DefaultTableModel getTableModel() {
         return tableModel;
+    }
+
+    public void setTableModel(DefaultTableModel tableModel) {
+        this.tableModel = tableModel;
     }
 }

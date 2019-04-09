@@ -1,6 +1,8 @@
 package utils;
 
 import java.io.Serializable;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * This is the supplier class which holds information of each supplier
@@ -31,9 +33,10 @@ public class Supplier implements Serializable {
     /**
      * Constructs a supplier object with specified values of id, name, address,
      * and sales contact
-     * @param id ID of supplier
-     * @param name Name of supplier
-     * @param address Address of supplier
+     *
+     * @param id           ID of supplier
+     * @param name         Name of supplier
+     * @param address      Address of supplier
      * @param salesContact Sales Contact of supplier
      */
     public Supplier(int id, String name, String address, String salesContact) {
@@ -44,7 +47,24 @@ public class Supplier implements Serializable {
     }
 
     /**
+     * Constructs a supplier object with database result set
+     * @param rs result set
+     */
+    public Supplier(ResultSet rs) {
+        try {
+            this.id = rs.getInt(1);
+            this.name = rs.getString(2);
+            this.address = rs.getString(3);
+            this.salesContact = rs.getString(4);
+        } catch (SQLException e){
+            System.out.println("Supplier creation error (ResultSet)");
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Formats supplier information into a string
+     *
      * @return string consisting of supplier information
      */
     public String toString() {
