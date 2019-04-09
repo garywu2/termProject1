@@ -225,7 +225,7 @@ public class MainGUIController extends GUIController{
         public void actionPerformed(ActionEvent e){
             if(e.getSource() == mainView.getAddButton()){
               try{
-                  clientController.getSocketOut().writeObject("add");
+                  clientController.getSocketOut().writeObject("addItem");
               }catch (Exception f){
                   f.printStackTrace();
               }
@@ -254,7 +254,7 @@ public class MainGUIController extends GUIController{
               Supplier newSupp = readNewSupplier();
               Item newItem = new Item(id, name, quantity, price, newSupp);
               addItemToTable(newItem);
-              sendItemData(newItem);
+              sendItemData(newItem);		
             }
         }
 

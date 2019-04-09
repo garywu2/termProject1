@@ -21,18 +21,21 @@ import utils.*;
  *
  */
 public class DatabaseModel {
-
-	private Connection myConnection;
-	private Shop myShop;
 	private int userId = 2;
 	private DefaultTableModel tableModel;
+	private Connection myConnection;
+	private final String SQL_GET_USER = "SELECT * FROM users WHERE username =? and password =?";
+	private final String SQL_ADD_USER = "INSERT INTO users (username, password) values(?,?)";
+	private final String SQL_GET_SUPPLIER_BY_ID = "SELECT supplierId FROM suppliers WHERE supplierId =?";
+	private final String SQL_ADD_ITEM = "INSERT INTO items (Item_ID, Name, Quantity, Price, Supplier_ID) values(?,?,?,?,?)";
+	private final String SQL_GET_ITEM_BY_ID = "SELECT * FROM items WHERE Item_ID =?";
+	private final String SQL_GET_ITEM_BY_NAME = "SELECT * FROM items WHERE Name =?";
 
 	/**
 	 * TODO
 	 */
 	public DatabaseModel(Connection c) {
 		myConnection = c;
-		myShop = new Shop(c);
 	}
 
 	/**
@@ -41,46 +44,112 @@ public class DatabaseModel {
 	 * @param user the user object to be verified
 	 * @return returns true if the User exists otherwise false
 	 */
-	public boolean verifyUser(User user) {
-		try {
-			Statement myStat = myConnection.createStatement();
-			String query = "SELECT * FROM users WHERE username = '" + user.getUsername() + "' and password ='"
-					+ user.getPassword() + "'";
-			ResultSet rs = myStat.executeQuery(query);
-			if (rs.next()) {
-				System.out.println("User is logged in");
-				return true;
+	public boolean userExists(User user) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_GET_USER)) {
+			pStmt.setString(1, user.getUsername());
+			pStmt.setString(2, user.getPassword());
+			try (ResultSet rs = pStmt.executeQuery()) {
+				if (rs.next()) {
+					System.out.println("User is logged in");
+					return true;
+				}
 			}
-			return false;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return false;
 		}
+		return false;
 	}
 
-	public boolean addUser(User user) {
-		try {
-			String query = "INSERT INTO users (username, password) values(?,?)";
-			PreparedStatement myStat = myConnection.prepareStatement(query);
-			myStat.setInt(1, userId);
-			userId++;
-			myStat.setString(2, user.getUsername());
-			myStat.setString(3, user.getPassword());
-			myStat.executeUpdate();
-			myStat.close();
-			return true;
+	public void addUser(User user) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_ADD_USER)) {
+			pStmt.setInt(1, userId++);
+			pStmt.setString(2, user.getUsername());
+			pStmt.setString(3, user.getPassword());
+			pStmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Unable to add user. You must enter a unique username.");
 			e.printStackTrace();
-			return false;
 		}
 	}
 
+	public Supplier searchSupplierByID(int supplierIdNumber) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_GET_SUPPLIER_BY_ID)) {
+			pStmt.setInt(1, supplierIdNumber);
+			try (ResultSet rs = pStmt.executeQuery()) {
+				if (rs.next()) {
+					return new Supplier(rs);
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
+	public boolean supplierExists(int supplierIdNumber) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_GET_SUPPLIER_BY_ID)) {
+			pStmt.setInt(1, supplierIdNumber);
+			try (ResultSet rs = pStmt.executeQuery()) {
+				if (rs.next()) {
+					return true;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public Item addItem(Item item) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_ADD_ITEM)) {
+			pStmt.setInt(1, item.getToolId());
+			pStmt.setString(2, item.getToolName());
+			pStmt.setInt(1, item.getToolQuantity());
+			pStmt.setDouble(1, item.getToolPrice());
+			pStmt.setInt(1, item.getToolSupplierIdNumber());
+			try (ResultSet rs = pStmt.executeQuery()) {
+				if (rs.next()) {
+					return new Item(rs);
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
-	public void createDefaultTableModel() {
+    public Item searchItemByName(String name){
+        try {
+            Statement myStat = myConnection.createStatement();
+            String query = ;
+            ResultSet rs = myStat.executeQuery(query);
+
+            if(rs.next())
+                return new Item(rs);
+        } catch (SQLException e) {
+            System.out.println("Supplier search from DB error");
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Item searchItemByID(int id){
+        try {
+            Statement myStat = myConnection.createStatement();
+            String query = "SELECT * FROM items WHERE itemID = '" + id + "'";
+            ResultSet rs = myStat.executeQuery(query);
+
+            if(rs.next())
+                return new Item(rs);
+        } catch (SQLException e) {
+            System.out.println("Supplier search from DB error");
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+	public void createDefaultTableModel(Statement myStat) {
 		try {
-			Statement myStat = myConnection.createStatement();
 			String query = "SELECT * FROM items";
 			ResultSet rs = myStat.executeQuery(query);
 			setTableModel(createTableFromRS(rs));
@@ -109,6 +178,7 @@ public class DatabaseModel {
 		return new DefaultTableModel(dataTable, columnNames) {
 
 			private static final long serialVersionUID = 1L;
+
 			@Override
 			public boolean isCellEditable(int rowIndex, int mColIndex) {
 				return false;
@@ -116,10 +186,8 @@ public class DatabaseModel {
 		};
 	}
 
-	// getters and setters
-	public Shop getMyShop() {
-		return myShop;
-	}
+	// TODO
+	// public defaultTableModel createOrderList(Date, Statement)
 
 	/**
 	 * @return the tableModel

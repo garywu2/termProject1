@@ -2,9 +2,14 @@ package Server.ServerController;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import Server.DatabaseModel.DatabaseModel;
+import utils.Supplier;
+import utils.User;
 
 public class DatabaseController implements DatabaseCredentials {
 	private Connection myConnection;
@@ -19,8 +24,8 @@ public class DatabaseController implements DatabaseCredentials {
 			e.printStackTrace();
 		}
 	}
-
-	public void close() {
+	
+	public void closeConnection() {
 		try {
 			myConnection.close();
 		} catch (SQLException e) {

@@ -2,6 +2,9 @@ package utils;
 
 import java.io.*;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
 /**
@@ -22,13 +25,8 @@ public class Shop implements Constants{
      * @param id id of supplier being searched
      * @return supplier object
      */
-    public Supplier searchSupplier(int id) {
-        for(int i = 0; i < supplierList.size(); i++){
-            if(supplierList.get(i).getId() == id)
-                return supplierList.get(i);
-        }
-        return null;
-    }
+	    
+
 
     /**
      * prints all tools (inventory)

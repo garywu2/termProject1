@@ -79,8 +79,9 @@ public class ServerCommunicationController {
 		while (true) {
 			try {
 				String input = (String) socketIn.readObject();
-				if (input.equals("add")) {
+				if (input.equals("addItem")) {
 					supplierCheck();
+					addItem();
 					sendUpdatedTableModel();
 				} else if (input.equals("remove")) {
 					removeItemFromInventory();
@@ -94,9 +95,15 @@ public class ServerCommunicationController {
 		}
 	}
 
+	private void addItem() {
+		Item readItem = (Item) socketIn.readObject();
+		
+		
+	}
+
 	private void sendUpdatedTableModel() {
 		try {
-			databaseController.getDatabaseModel().createDefaultTableModel();
+			databaseController.createDefaultTableModel();
 			if(databaseController.getDatabaseModel().getTableModel() != null) {
 			socketOut.writeObject(databaseController.getDatabaseModel().getTableModel());
 			}else {
@@ -163,12 +170,12 @@ public class ServerCommunicationController {
 				String readSuppID = (String) socketIn.readObject();
 				suppID = Integer.parseInt(readSuppID);
 
-				if (databaseController.getDatabaseModel().getMyShop().isSupplier(suppID))
+				if (databaseController.supplierExists(suppID))
 					verif = "verified";
 
 				socketOut.writeObject(verif);
 			}
-			socketOut.writeObject(databaseController.getDatabaseModel().getMyShop().searchSupplier(suppID));
+			socketOut.writeObject(databaseController.searchSupplier(suppID));
 		} catch (Exception e) {
 			System.out.println("Supplier Check Error");
 		}
@@ -197,7 +204,7 @@ public class ServerCommunicationController {
 			while (!verified) {
 				User readUser = (User) socketIn.readObject();
 
-				if (databaseController.getDatabaseModel().verifyUser(readUser)) {
+				if (databaseController.verifyLogin(readUser)) {
 					socketOut.writeObject("Verified");
 					System.out.println("Login Success!");
 					verified = true;
@@ -224,7 +231,7 @@ public class ServerCommunicationController {
 			while (!verified) {
 				User readUser = (User) socketIn.readObject();
 
-				if (databaseController.getDatabaseModel().addUser(readUser)) {
+				if (databaseController.addUser(readUser)) {
 					socketOut.writeObject("User Added!");
 					System.out.println("User Added");
 					verified = true;
@@ -262,7 +269,7 @@ public class ServerCommunicationController {
 			socketIn.close();
 			socketOut.close();
 			serverSocket.close();
-			databaseController.getMyConnection().close();
+			databaseController.closeConnection();
 		} catch (SQLException e) {
 			System.out.println("Error while closing the database.");
 			e.printStackTrace();
