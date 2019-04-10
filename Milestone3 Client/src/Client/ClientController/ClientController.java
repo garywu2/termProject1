@@ -2,13 +2,10 @@ package Client.ClientController;
 
 import Client.ClientView.LoginView;
 import Client.ClientView.MainView;
-import utils.*;
-
 import javax.swing.table.DefaultTableModel;
 import java.io.*;
 import java.net.*;
-import java.util.ArrayList;
-import java.util.Vector;
+
 
 /**
  * This class is responsible for communicating with the server
@@ -26,7 +23,6 @@ public class ClientController {
     private ObjectOutputStream socketOut;
     private Socket aSocket;
     private ObjectInputStream socketIn;
-
     private LoginController loginController;
     private MainGUIController mainGUIController;
 
@@ -48,6 +44,7 @@ public class ClientController {
 
             loginController = new LoginController(loginView, this);
             mainGUIController = new MainGUIController(mainView, this);
+            mainGUIController.addListeners();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -62,7 +59,6 @@ public class ClientController {
         ClientController cc = new ClientController("localhost", 9000);
 
         cc.mainGUIController.importItemsFromServer();
-        //cc.importTableModelFromServer();
 
         cc.showMainWindow();
     }
