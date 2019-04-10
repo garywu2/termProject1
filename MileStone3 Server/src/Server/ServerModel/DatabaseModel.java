@@ -19,11 +19,11 @@ import utils.*;
  * @version 4.10.0
  * @since April 5, 2019
  */
-public class DatabaseModel implements DatabaseAccessQueries{
+public class DatabaseModel implements DatabaseAccessQueries {
 
 	private Connection myConnection;
 	private int userId = 2;
-	private DefaultTableModel tableModel;
+
 	/**
 	 * TODO
 	 */
@@ -65,50 +65,6 @@ public class DatabaseModel implements DatabaseAccessQueries{
 		}
 	}
 
-	public void createDefaultTableModel() {
-		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_GET_ALL_ITEMS)) {
-			try (ResultSet rs = pStmt.executeQuery()) {
-				setTableModel(createTableFromRS(rs));
-			}
-
-		} catch (SQLException e) {
-			System.out.println("Unable to create table");
-			e.printStackTrace();
-			setTableModel(null);
-		}
-	}
-
-	public DefaultTableModel createTableFromRS(ResultSet rs) throws SQLException {
-		ResultSetMetaData metaData = rs.getMetaData();
-		Vector<String> columnNames = new Vector<String>();
-		int numCol = metaData.getColumnCount();
-		for (int column = 1; column <= numCol; column++) {
-			columnNames.add(metaData.getColumnName(column));
-		}
-		Vector<Vector<Object>> dataTable = new Vector<Vector<Object>>();
-		while (rs.next()) {
-			Vector<Object> vector = new Vector<Object>();
-			for (int colIndex = 1; colIndex <= numCol; colIndex++) {
-				vector.add(rs.getObject(colIndex));
-			}
-			dataTable.add(vector);
-		}
-		return new DefaultTableModel(dataTable, columnNames) {
-
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public boolean isCellEditable(int rowIndex, int mColIndex) {
-				return false;
-			}
-		};
-	}
-
-	/**
-	 * TODO remove and implement table model^
-	 *
-	 * @return
-	 */
 	public ArrayList<Item> getItemsFromDB() {
 		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_GET_ALL_ITEMS)) {
 			ArrayList<Item> items = new ArrayList<>();
@@ -244,21 +200,5 @@ public class DatabaseModel implements DatabaseAccessQueries{
 			e.printStackTrace();
 		}
 		return true;
-	}
-
-	// getters and setters
-
-	/**
-	 * @return the tableModel
-	 */
-	public DefaultTableModel getTableModel() {
-		return tableModel;
-	}
-
-	/**
-	 * @param tableModel the tableModel to set
-	 */
-	public void setTableModel(DefaultTableModel tableModel) {
-		this.tableModel = tableModel;
 	}
 }

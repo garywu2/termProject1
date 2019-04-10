@@ -222,19 +222,6 @@ public class ServerCommunicationController implements Runnable {
         }
     }
 
-    private void sendUpdatedTableModel() {
-        try {
-            serverController.getDatabaseController().getDatabaseModel().createDefaultTableModel();
-            if (serverController.getDatabaseController().getDatabaseModel().getTableModel() != null) {
-                socketOut.writeObject(serverController.getDatabaseController().getDatabaseModel().getTableModel());
-            } else {
-                socketOut.writeObject("Unable to update model.");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     /**
      * Verifies the log in by running an infinite loop that only stops if the user
      * has entered a valid username and password
