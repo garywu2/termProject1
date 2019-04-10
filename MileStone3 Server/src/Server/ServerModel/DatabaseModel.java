@@ -19,21 +19,11 @@ import utils.*;
  * @version 4.10.0
  * @since April 5, 2019
  */
-public class DatabaseModel {
+public class DatabaseModel implements DatabaseAccessQueries{
 
 	private Connection myConnection;
 	private int userId = 2;
 	private DefaultTableModel tableModel;
-	private final String SQL_GET_USER = "SELECT * FROM users WHERE userID =? and userPass =?";
-	private final String SQL_ADD_USER = "INSERT INTO users (userID, userPass) values(?,?)";
-	private final String SQL_GET_SUPPLIER_BY_ID = "SELECT * FROM suppliers WHERE supplierID =?";
-	private final String SQL_ADD_ITEM = "INSERT INTO items (itemID, itemName, itemQuantity, itemPrice, itemSupplierID) values(?,?,?,?,?)";
-	private final String SQL_GET_ITEM_BY_ID = "SELECT * FROM items WHERE itemID =?";
-	private final String SQL_GET_ITEM_BY_NAME = "SELECT * FROM items WHERE itemName =?";
-	private final String SQL_GET_ALL_ITEMS = "SELECT * FROM items";
-	private final String SQL_DECREASE_ITEM_QUANTITY = "UPDATE items SET itemQuantity =? WHERE itemID =?";
-	private final String SQL_REMOVE_ITEM = "DELETE FROM items WHERE itemID =?";
-
 	/**
 	 * TODO
 	 */
