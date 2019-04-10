@@ -7,7 +7,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 /**
  * The MAIN GUIController class essentially holds all code for that
@@ -274,8 +273,8 @@ public class MainGUIController extends GUIController {
 
                     //reads new supplier
                     Supplier newSupp = (Supplier) clientController.getSocketIn().readObject();
-                    ;
-                    Item newItem = new Item(id, name, quantity, price, newSupp);
+                    
+                    Item newItem = new Item(id, name, quantity, price, newSupp.getId());
 
                     //send item to server
                     clientController.getSocketOut().writeObject(newItem);
@@ -419,7 +418,7 @@ public class MainGUIController extends GUIController {
                 "  Name: " + i.getToolName() +
                 "  Quantity: " + i.getToolQuantity() +
                 "  Price: " + i.getToolPrice() +
-                "  Supplier: " + i.getToolSupplier().getName();
+                "  Supplier: " + i.getToolSupplierIdNumber();
     }
 
     /**
@@ -459,7 +458,7 @@ public class MainGUIController extends GUIController {
                 data[i][1] = readItem.getToolName();
                 data[i][2] = String.valueOf(readItem.getToolQuantity());
                 data[i][3] = String.valueOf(readItem.getToolPrice());
-                data[i][4] = readItem.getToolSupplier().getId() + " - " + readItem.getToolSupplier().getName();
+                data[i][4] = String.valueOf(readItem.getToolSupplierIdNumber());	//TODO re-implement this so that it show the supplier name
             }
 
             DefaultTableModel tableModel = new DefaultTableModel(data, header);

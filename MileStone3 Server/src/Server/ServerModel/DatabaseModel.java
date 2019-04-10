@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Vector;
 
@@ -22,264 +21,254 @@ import utils.*;
  */
 public class DatabaseModel {
 
-    private Connection myConnection;
-    private int userId = 2;
-    private DefaultTableModel tableModel;
+	private Connection myConnection;
+	private int userId = 2;
+	private DefaultTableModel tableModel;
+	private final String SQL_GET_USER = "SELECT * FROM users WHERE userID =? and userPass =?";
+	private final String SQL_ADD_USER = "INSERT INTO users (userID, userPass) values(?,?)";
+	private final String SQL_GET_SUPPLIER_BY_ID = "SELECT * FROM suppliers WHERE supplierID =?";
+	private final String SQL_ADD_ITEM = "INSERT INTO items (itemID, itemName, itemQuantity, itemPrice, itemSupplierID) values(?,?,?,?,?)";
+	private final String SQL_GET_ITEM_BY_ID = "SELECT * FROM items WHERE itemID =?";
+	private final String SQL_GET_ITEM_BY_NAME = "SELECT * FROM items WHERE itemName =?";
+	private final String SQL_GET_ALL_ITEMS = "SELECT * FROM items";
+	private final String SQL_DECREASE_ITEM_QUANTITY = "UPDATE items SET itemQuantity =? WHERE itemID =?";
+	private final String SQL_REMOVE_ITEM = "DELETE FROM items WHERE itemID =?";
 
-    /**
-     * TODO
-     */
-    public DatabaseModel(Connection c) {
-        myConnection = c;
-    }
+	/**
+	 * TODO
+	 */
+	public DatabaseModel(Connection c) {
+		myConnection = c;
+	}
 
-    /**
-     * Checks to see if the user entered is correct
-     *
-     * @param user the user object to be verified
-     * @return returns true if the User exists otherwise false
-     */
-    public boolean verifyUser(User user) {
-        try {
-            Statement myStat = myConnection.createStatement();
-            String query = "SELECT * FROM users WHERE userID = '" + user.getUsername() + "' and userPass ='"
-                    + user.getPassword() + "'";
-            ResultSet rs = myStat.executeQuery(query);
-            if (rs.next()) {
-                System.out.println("User is logged in");
-                return true;
-            }
-            return false;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
+	/**
+	 * Checks to see if the user entered is correct
+	 *
+	 * @param user the user object to be verified
+	 * @return returns true if the User exists otherwise false
+	 */
+	public boolean verifyUser(User user) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_GET_USER)) {
+			pStmt.setString(1, user.getUsername());
+			pStmt.setString(2, user.getPassword());
+			try (ResultSet rs = pStmt.executeQuery()) {
+				if (rs.next()) {
+					System.out.println("User is logged in");
+					return true;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 
-    public boolean addUser(User user) {
-        try {
-            String query = "INSERT INTO users (username, password) values(?,?)";
-            PreparedStatement myStat = myConnection.prepareStatement(query);
-            myStat.setInt(1, userId);
-            userId++;
-            myStat.setString(2, user.getUsername());
-            myStat.setString(3, user.getPassword());
-            myStat.executeUpdate();
-            myStat.close();
-            return true;
-        } catch (SQLException e) {
-            System.out.println("Unable to add user. You must enter a unique username.");
-            e.printStackTrace();
-            return false;
-        }
-    }
+	public void addUser(User user) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_ADD_USER)) {
+			pStmt.setInt(1, userId++);
+			pStmt.setString(2, user.getUsername());
+			pStmt.setString(3, user.getPassword());
+			pStmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Unable to add user. You must enter a unique username.");
+			e.printStackTrace();
+		}
+	}
 
+	public void createDefaultTableModel() {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_GET_ALL_ITEMS)) {
+			try (ResultSet rs = pStmt.executeQuery()) {
+				setTableModel(createTableFromRS(rs));
+			}
 
-    public void createDefaultTableModel() {
-        try {
-            Statement myStat = myConnection.createStatement();
-            String query = "SELECT * FROM items";
-            ResultSet rs = myStat.executeQuery(query);
-            setTableModel(createTableFromRS(rs));
-        } catch (SQLException e) {
-            System.out.println("Unable to create table");
-            e.printStackTrace();
-            setTableModel(null);
-        }
-    }
+		} catch (SQLException e) {
+			System.out.println("Unable to create table");
+			e.printStackTrace();
+			setTableModel(null);
+		}
+	}
 
-    public DefaultTableModel createTableFromRS(ResultSet rs) throws SQLException {
-        ResultSetMetaData metaData = rs.getMetaData();
-        Vector<String> columnNames = new Vector<String>();
-        int numCol = metaData.getColumnCount();
-        for (int column = 1; column <= numCol; column++) {
-            columnNames.add(metaData.getColumnName(column));
-        }
-        Vector<Vector<Object>> dataTable = new Vector<Vector<Object>>();
-        while (rs.next()) {
-            Vector<Object> vector = new Vector<Object>();
-            for (int colIndex = 1; colIndex <= numCol; colIndex++) {
-                vector.add(rs.getObject(colIndex));
-            }
-            dataTable.add(vector);
-        }
-        return new DefaultTableModel(dataTable, columnNames) {
+	public DefaultTableModel createTableFromRS(ResultSet rs) throws SQLException {
+		ResultSetMetaData metaData = rs.getMetaData();
+		Vector<String> columnNames = new Vector<String>();
+		int numCol = metaData.getColumnCount();
+		for (int column = 1; column <= numCol; column++) {
+			columnNames.add(metaData.getColumnName(column));
+		}
+		Vector<Vector<Object>> dataTable = new Vector<Vector<Object>>();
+		while (rs.next()) {
+			Vector<Object> vector = new Vector<Object>();
+			for (int colIndex = 1; colIndex <= numCol; colIndex++) {
+				vector.add(rs.getObject(colIndex));
+			}
+			dataTable.add(vector);
+		}
+		return new DefaultTableModel(dataTable, columnNames) {
 
-            private static final long serialVersionUID = 1L;
+			private static final long serialVersionUID = 1L;
 
-            @Override
-            public boolean isCellEditable(int rowIndex, int mColIndex) {
-                return false;
-            }
-        };
-    }
+			@Override
+			public boolean isCellEditable(int rowIndex, int mColIndex) {
+				return false;
+			}
+		};
+	}
 
-    /**
-     * TODO remove and implement table model^
-     *
-     * @return
-     */
-    public ArrayList<Item> getItemsFromDB() {
-        try {
-            ArrayList<Item> items = new ArrayList<>();
+	/**
+	 * TODO remove and implement table model^
+	 *
+	 * @return
+	 */
+	public ArrayList<Item> getItemsFromDB() {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_GET_ALL_ITEMS)) {
+			ArrayList<Item> items = new ArrayList<>();
+			try (ResultSet rs = pStmt.executeQuery()) {
+				while (rs.next()) {
+					items.add(new Item(rs));
+				}
+			}
+			System.out.println(items.size());
+			return items;
+		} catch (SQLException e) {
+			System.out.println("Getting items from DB error");
+			e.printStackTrace();
+		}
+		return null;
+	}
 
-            Statement myStat = myConnection.createStatement();
-            String query = "SELECT * FROM items";
-            ResultSet rs = myStat.executeQuery(query);
-            while (rs.next()) {
-                items.add(new Item(rs, searchSupplierFromDB(rs.getInt(5))));
-            }
+	public Supplier searchSupplierByID(int supplierIdNumber) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_GET_SUPPLIER_BY_ID)) {
+			pStmt.setInt(1, supplierIdNumber);
+			try (ResultSet rs = pStmt.executeQuery()) {
+				if (rs.next()) {
+					return new Supplier(rs);
+				}
+			}
+		} catch (SQLException e) {
+			System.out.println("Supplier search from DB error");
+			e.printStackTrace();
+		}
+		return null;
+	}
 
-            myStat.close();
-            System.out.println(items.size());
-            return items;
-        } catch (SQLException e) {
-            System.out.println("Getting items from DB error");
-            e.printStackTrace();
-        }
-        return null;
-    }
+	public Item searchItemByName(String name) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_GET_ITEM_BY_NAME)) {
+			pStmt.setString(1, name);
+			try (ResultSet rs = pStmt.executeQuery()) {
+				if (rs.next())
+					return new Item(rs);
+			}
+		} catch (SQLException e) {
+			System.out.println("Item search by name from DB error");
+			e.printStackTrace();
+		}
+		return null;
+	}
 
-    public Supplier searchSupplierFromDB(int suppID) {
-        try {
-            Statement myStat = myConnection.createStatement();
-            String query = "SELECT * FROM suppliers WHERE ID = '" + suppID + "'";
-            ResultSet rs = myStat.executeQuery(query);
+	public Item searchItemByID(int id) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_GET_ITEM_BY_ID)) {
+			pStmt.setInt(1, id);
+			try (ResultSet rs = pStmt.executeQuery()) {
+				if (rs.next())
+					return new Item(rs);
+			}
+		} catch (SQLException e) {
+			System.out.println("Item search by ID from DB error");
+			e.printStackTrace();
+		}
+		return null;
+	}
 
-            if(rs.next())
-                return new Supplier(rs);
-        } catch (SQLException e) {
-            System.out.println("Supplier search from DB error");
-            e.printStackTrace();
-        }
-        return null;
-    }
+	public boolean decreaseItemQuantity(int id, int newQuantity) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_DECREASE_ITEM_QUANTITY)) {
+			pStmt.setInt(1, newQuantity);
+			pStmt.setInt(2, id);
+			int status = pStmt.executeUpdate();
+			if (status == 0) {
+				System.out.println("Item already deleted!");
+				return false;
+			} else {
+				System.out.println("Item Quantity in DB Decreased!");
+			}
+		} catch (SQLException e) {
+			System.out.println("Item search by ID from DB error");
+			e.printStackTrace();
+		}
+		return true;
+	}
 
-    public Item searchItemByName(String name){
-        try {
-            Statement myStat = myConnection.createStatement();
-            String query = "SELECT * FROM items WHERE itemName = '" + name + "'";
-            ResultSet rs = myStat.executeQuery(query);
+	public boolean itemExists(int id) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_GET_ITEM_BY_ID)) {
+			pStmt.setInt(1, id);
+			try (ResultSet rs = pStmt.executeQuery()) {
+				if (rs.next())
+					return true;
+			}
+		} catch (SQLException e) {
+			System.out.println("Item search by ID from DB error");
+			e.printStackTrace();
+		}
+		return false;
+	}
 
-            if(rs.next())
-                return new Item(rs, searchSupplierFromDB(rs.getInt(5)));
-        } catch (SQLException e) {
-            System.out.println("Supplier search from DB error");
-            e.printStackTrace();
-        }
-        return null;
-    }
+	public boolean supplierExists(int supplierIdNumber) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_GET_SUPPLIER_BY_ID)) {
+			pStmt.setInt(1, supplierIdNumber);
+			try (ResultSet rs = pStmt.executeQuery()) {
+				if (rs.next())
+					return true;
+			}
+		} catch (SQLException e) {
+			System.out.println("Supplier search by ID from DB error");
+			e.printStackTrace();
+		}
+		return false;
+	}
 
-    public Item searchItemByID(int id){
-        try {
-            Statement myStat = myConnection.createStatement();
-            String query = "SELECT * FROM items WHERE itemID = '" + id + "'";
-            ResultSet rs = myStat.executeQuery(query);
+	public void addItemToDB(Item newItem) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_ADD_ITEM)) {
+			pStmt.setInt(1, newItem.getToolId());
+			pStmt.setString(2, newItem.getToolName());
+			pStmt.setInt(3, newItem.getToolQuantity());
+			pStmt.setDouble(4, newItem.getToolPrice());
+			pStmt.setInt(5, newItem.getToolSupplierIdNumber());
+			pStmt.executeUpdate();
+			System.out.println("Item added to DB");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
-            if(rs.next())
-                return new Item(rs, searchSupplierFromDB(rs.getInt(5)));
-        } catch (SQLException e) {
-            System.out.println("Supplier search from DB error");
-            e.printStackTrace();
-        }
-        return null;
-    }
+	public boolean removeItemFromDB(int id) {
+		try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_REMOVE_ITEM)) {
+			pStmt.setInt(1, id);
+			int status = pStmt.executeUpdate();
+			if (status == 0) {
+				System.out.println("Item already deleted!");
+				return false;
+			} else {
+				System.out.println("Item deleted from DB!");
+			}
+		} catch (SQLException e) {
+			System.out.println("Item remove by ID from DB error");
+			e.printStackTrace();
+		}
+		return true;
+	}
 
-    public boolean decreaseItemQuantity(int id, int newQuantity){
-        try {
-            Statement myStat = myConnection.createStatement();
-            String query = "UPDATE items SET itemQuantity = " + newQuantity + " WHERE itemID = " + id;
-            int status = myStat.executeUpdate(query);
+	// getters and setters
 
-            if(status == 0){
-                System.out.println("Item already deleted!");
-                return false;
-            }else {
-                System.out.println("Item Quantity in DB Decreased!");
-            }
-        } catch (SQLException e) {
-            System.out.println("Decrease Quantity from DB error");
-            e.printStackTrace();
-        }
-        return true;
-    }
+	/**
+	 * @return the tableModel
+	 */
+	public DefaultTableModel getTableModel() {
+		return tableModel;
+	}
 
-    public boolean itemExists(int id){
-        try {
-            Statement myStat = myConnection.createStatement();
-            String query = "SELECT * FROM items WHERE itemID = '" + id + "'";
-            ResultSet rs = myStat.executeQuery(query);
-
-            if(rs.next())
-                return true;
-        } catch (SQLException e) {
-            System.out.println("Item exists search from DB error");
-            e.printStackTrace();
-        }
-
-        return false;
-    }
-
-    public boolean supplierExists(int suppID){
-        try {
-            Statement myStat = myConnection.createStatement();
-            String query = "SELECT * FROM suppliers WHERE ID = '" + suppID + "'";
-            ResultSet rs = myStat.executeQuery(query);
-
-            if(rs.next())
-                return true;
-        } catch (SQLException e) {
-            System.out.println("Supplier search from DB error");
-            e.printStackTrace();
-        }
-
-        return false;
-    }
-
-    public void addItemToDB(Item newItem){
-        try{
-            Statement myStat = myConnection.createStatement();
-            String query = "INSERT INTO items(itemID,itemName,itemQuantity,itemPrice,itemSupplierID) " +
-                           "VALUES ('" + newItem.getToolId() + "','" + newItem.getToolName() + "','" + newItem.getToolQuantity() + "','" + newItem.getToolPrice() + "','" + newItem.getToolSupplier().getId() + "')";
-            myStat.executeUpdate(query);
-
-            System.out.println("Item added to DB");
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-    }
-
-    public boolean removeItemFromDB(int id){
-        try{
-            Statement myStat = myConnection.createStatement();
-            String query = "DELETE FROM items WHERE itemID = '" + id + "'";
-            int status = myStat.executeUpdate(query);
-
-            if(status == 0){
-                System.out.println("Item already deleted!");
-                return false;
-            }else {
-                System.out.println("Item deleted from DB!");
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return true;
-    }
-
-    // getters and setters
-
-    /**
-     * @return the tableModel
-     */
-    public DefaultTableModel getTableModel() {
-        return tableModel;
-    }
-
-    /**
-     * @param tableModel the tableModel to set
-     */
-    public void setTableModel(DefaultTableModel tableModel) {
-        this.tableModel = tableModel;
-    }
+	/**
+	 * @param tableModel the tableModel to set
+	 */
+	public void setTableModel(DefaultTableModel tableModel) {
+		this.tableModel = tableModel;
+	}
 }

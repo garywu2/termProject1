@@ -176,7 +176,7 @@ public class ServerCommunicationController implements Runnable {
             socketOut.writeObject("verified");
 
             //sends supplier to client
-            Supplier searchedSupp = serverController.getDatabaseController().getDatabaseModel().searchSupplierFromDB(suppID);
+            Supplier searchedSupp = serverController.getDatabaseController().getDatabaseModel().searchSupplierByID(suppID);
             socketOut.writeObject(searchedSupp);
 
             //recieves new item
