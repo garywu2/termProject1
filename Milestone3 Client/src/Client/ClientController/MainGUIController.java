@@ -156,8 +156,10 @@ public class MainGUIController extends GUIController {
 
 
             String s = JOptionPane.showInputDialog("Enter number of items sold:");
-            if (s == null)
+            if (s == null) {
                 clientController.getSocketOut().writeObject("reset");
+                return;
+            }
 
             int sold = Integer.parseInt(s);
 
