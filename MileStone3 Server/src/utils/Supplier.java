@@ -6,6 +6,10 @@ import java.sql.SQLException;
 
 /**
  * This is the supplier class which holds information of each supplier
+ * 
+ * @author  Gary Wu
+ * @version 4.10.0
+ * @since April 5, 2019
  */
 public class Supplier implements Serializable {
 

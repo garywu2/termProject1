@@ -7,6 +7,10 @@ import java.sql.SQLException;
 /**
  * This is the Order class which keep track of each order placed
  * for items under quantity of 40
+ * 
+ * @author  Gary Wu
+ * @version 4.10.0
+ * @since April 5, 2019
  */
 public class Order implements Serializable {
 

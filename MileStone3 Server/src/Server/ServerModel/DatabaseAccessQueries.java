@@ -1,12 +1,17 @@
 package Server.ServerModel;
 
 /**
- * This interface holds the queries needed to perform operations on the database
+ * This interface holds the queries needed to perform operations on the database such
+ * as inserting and deleting items from the data base
  * @author Ryan Holt
+ * @version 4.10.0
  * @since April 12, 2019
  */
 public interface DatabaseAccessQueries {
 
+	/**
+	 * All the different quries that are needed to perform different actions 
+	 */
     public static final String SQL_GET_USER = "SELECT * FROM users WHERE userID =? and userPass =?";
     public static final String SQL_ADD_USER = "INSERT INTO users (userID, userPass) values(?,?)";
     public static final String SQL_GET_SUPPLIER_BY_ID = "SELECT * FROM suppliers WHERE supplierID =?";

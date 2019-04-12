@@ -292,7 +292,7 @@ public class MainGUIController extends GUIController {
 
     /**
      * When the refresh button is pressed, this action listener
-     * refreshes the centre panel which includes the table
+     * refreshes the center panel which includes the table
      * by importing the latest items from the database
      */
     public void refreshListen(){
@@ -310,15 +310,15 @@ public class MainGUIController extends GUIController {
 
     /**
      * When the Show Item List button is pressed, this action listener
-     * creates and displays the item table on the centre panel
+     * creates and displays the item table on the center panel
      */
     public void showItemListListen(){
         mainView.createItemTable();
     }
 
     /**
-     * When the Show Order List button is pressed, this action lsitener
-     * creates and displays the order table on the centre panel
+     * When the Show Order List button is pressed, this action listener
+     * creates and displays the order table on the center panel
      */
     public void showOrderListListen(){
         try {
@@ -381,6 +381,11 @@ public class MainGUIController extends GUIController {
         return num;
     }
 
+    /**
+     * Puts all partemeters of an item into a string and returns it
+     * @param i the item that info will be found from
+     * @return a String with the item id, name, quantity, price and supplier
+     */
     public String promptItem(Item i) {
         return "ID: " + i.getToolId() +
                 "  Name: " + i.getToolName() +

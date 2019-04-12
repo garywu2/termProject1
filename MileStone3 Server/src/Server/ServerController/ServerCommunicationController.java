@@ -13,6 +13,7 @@ import utils.*;
  * A new instance of this class is appointed to each client in an
  * independent thread.
  * @author Harsohail Brar
+ * @version 4.10.0
  * @since April 12, 2019
  */
 public class ServerCommunicationController implements Runnable {
@@ -22,6 +23,12 @@ public class ServerCommunicationController implements Runnable {
     private ObjectOutputStream socketOut;
     private ServerController serverController;
 
+    /**
+     * Constructor for the server communication controllers which sets the socket and 
+     * also sets the output stream and prints the ip info
+     * @param s
+     * @param serverController
+     */
     public ServerCommunicationController(Socket s, ServerController serverController) {
         try {
             aSocket = s;
@@ -36,6 +43,11 @@ public class ServerCommunicationController implements Runnable {
         }
     }
 
+    /**
+     * Run fuction for the threads which creates input streams and exports
+     * all the items to the client and runs the verify login function
+     * to make sure the person enteres right user info
+     */
     @Override
     public void run() {
         createInputStream();
@@ -44,6 +56,10 @@ public class ServerCommunicationController implements Runnable {
         communicate();
     }
 
+    /**
+     * Takes what the client passed to the user through the socket and does
+     * an appropriate action based on what was passed through
+     */
     public void communicate() {
         while (true) {
             try {
@@ -229,6 +245,9 @@ public class ServerCommunicationController implements Runnable {
         }
     }
 
+    /**
+     * Removes an item from the data base
+     */
     public void removeItemFromDB() {
         try {
             String status = (String) socketIn.readObject();
@@ -289,6 +308,9 @@ public class ServerCommunicationController implements Runnable {
         }
     }
 
+    /**
+     * Prints the ip address of the local host 
+     */
     public void printIPInfo() {
         InetAddress ip;
         try {

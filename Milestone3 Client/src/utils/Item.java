@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 /**
  * This is the Item class which holds information of each tool
+ * 
+ * @author  Gary Wu
+ * @version 4.10.0
+ * @since April 5, 2019
  */
 public class Item implements Serializable {
 

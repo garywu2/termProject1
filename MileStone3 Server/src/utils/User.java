@@ -6,6 +6,10 @@ import java.util.ArrayList;
 /**
  * This class is responsible for holding a user's
  * data  such as username, password etc.
+ * 
+ * @author  Gary Wu
+ * @version 4.10.0
+ * @since April 5, 2019
  */
 public class User implements Serializable {
 
@@ -26,6 +30,12 @@ public class User implements Serializable {
         itemsOrdered = new ArrayList<>();
     }
 
+    /**
+     * Compares if the username and password match the one set and if yes
+     * returns true else false
+     * @param u is the User entered
+     * @return true or false dependeing if the user exisits 
+     */
     public boolean compareUser(User u){
         if(u.username.equals(this.username) && u.password.equals(this.password))
             return true;

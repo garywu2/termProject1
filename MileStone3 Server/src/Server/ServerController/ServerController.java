@@ -13,6 +13,7 @@ import java.util.concurrent.Executors;
  * this class makes an instance of the ServerCommunicationController
  * for the client in a new thread
  * @author Harsohail Brar
+ * @version 4.10.0
  * @since April 12, 2019
  */
 public class ServerController {
@@ -22,6 +23,11 @@ public class ServerController {
     private DatabaseController databaseController;
     private ExecutorService pool;
 
+    /**
+     * Constructor for the server controller which creates new Server sockets
+     * and database controllers and starts the thread pool with 10 threads
+     * Also prints out the ip info of server
+     */
     public ServerController() {
         try {
             serverSocket = new ServerSocket(PORT);
@@ -36,11 +42,19 @@ public class ServerController {
         }
     }
 
+    /**
+     * Main function for Server controller which constructs the server controller 
+     * and starts communication with clients
+     * @param args
+     */
     public static void main(String[] args) {
         ServerController myServer = new ServerController();
         myServer.communicateWithClient();
     }
 
+    /**
+     * Communicates with clients using threads
+     */
     public void communicateWithClient() {
         try {
             while (true) {
@@ -56,6 +70,9 @@ public class ServerController {
         }
     }
 
+    /**
+     * Prints the ip adresss of the server 
+     */
     public void printIPInfo() {
         InetAddress ip;
         try {

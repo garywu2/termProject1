@@ -103,7 +103,7 @@ public class MainView extends JFrame {
     }
 
     /**
-     * Creates an order table on the centre panel
+     * Creates an order table on the center panel
      */
     public void createOrderTable(){
         if(centrePanel != null)
@@ -122,7 +122,7 @@ public class MainView extends JFrame {
 
 
     /**
-     * Updates table
+     * Updates the item table
      */
     public void updateItemTable(){
         if(centrePanel != null)

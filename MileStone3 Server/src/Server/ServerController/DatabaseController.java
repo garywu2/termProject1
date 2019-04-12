@@ -7,6 +7,7 @@ import Server.ServerModel.DatabaseModel;
  * This class is responsible for the connection to the database and
  * the database model
  * @author Ryan Holt
+ * @version 4.10.0
  * @since April 12, 2019
  */
 public class DatabaseController implements DatabaseCredentials{
