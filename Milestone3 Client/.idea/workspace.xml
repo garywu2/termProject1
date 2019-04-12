@@ -61,11 +61,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
+            <state relative-caret-position="511">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -82,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="464" column="17" lean-forward="true" selection-start-line="464" selection-start-column="17" selection-end-line="464" selection-end-column="17" />
+            <state relative-caret-position="653">
+              <caret line="447" column="12" lean-forward="true" selection-start-line="447" selection-start-column="12" selection-end-line="447" selection-end-column="12" />
               <folding>
                 <element signature="e#11190#11191#0" expanded="true" />
                 <element signature="e#11232#11233#0" expanded="true" />
@@ -137,8 +137,8 @@
         <option value="$PROJECT_DIR$/src/Client/ClientView/LoginView.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientController/LoginController.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientView/MainView.java" />
-        <option value="$PROJECT_DIR$/src/Client/ClientController/ClientController.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientController/ClientController.java" />
       </list>
     </option>
   </component>
@@ -377,17 +377,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="464" column="17" lean-forward="true" selection-start-line="464" selection-start-column="17" selection-end-line="464" selection-end-column="17" />
+        <state relative-caret-position="653">
+          <caret line="447" column="12" lean-forward="true" selection-start-line="447" selection-start-column="12" selection-end-line="447" selection-end-column="12" />
           <folding>
             <element signature="e#11190#11191#0" expanded="true" />
             <element signature="e#11232#11233#0" expanded="true" />
@@ -397,6 +390,13 @@
             <element signature="e#16327#16328#0" expanded="true" />
             <element signature="e#16637#16638#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>

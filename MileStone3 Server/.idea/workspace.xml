@@ -84,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="171" column="79" lean-forward="true" selection-start-line="171" selection-start-column="79" selection-end-line="171" selection-end-column="79" />
+            <state relative-caret-position="69">
+              <caret line="147" column="83" selection-start-line="147" selection-start-column="83" selection-end-line="147" selection-end-column="83" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8851#8852#0" expanded="true" />
@@ -253,7 +253,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555089768530" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555089879434" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -493,8 +493,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="171" column="79" lean-forward="true" selection-start-line="171" selection-start-column="79" selection-end-line="171" selection-end-column="79" />
+        <state relative-caret-position="69">
+          <caret line="147" column="83" selection-start-line="147" selection-start-column="83" selection-end-line="147" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8851#8852#0" expanded="true" />
