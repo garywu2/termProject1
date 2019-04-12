@@ -16,7 +16,8 @@ public class LoginView extends JFrame {
 
     private JPanel titlePanel, centrePanel, buttonPanel;
 
-    private JTextField usernameField, passwordFeild;
+    private JTextField usernameField;
+    private JPasswordField passwordFeild;
 
     private JButton loginButton;
 
@@ -41,7 +42,7 @@ public class LoginView extends JFrame {
         add("South", buttonPanel);
 
         usernameField = new JTextField(10);
-        passwordFeild = new JTextField(10);
+        passwordFeild = new JPasswordField(10);
 
         JLabel usernameLabel = new JLabel("Username:");
         usernameLabel.setLabelFor(usernameField);

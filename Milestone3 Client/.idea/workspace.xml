@@ -61,11 +61,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="817">
+              <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -73,7 +73,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/ClientController/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
+            <state relative-caret-position="726">
               <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -85,7 +85,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="653">
+            <state relative-caret-position="8360">
               <caret line="447" column="12" lean-forward="true" selection-start-line="447" selection-start-column="12" selection-end-line="447" selection-end-column="12" />
               <folding>
                 <element signature="e#11190#11191#0" expanded="true" />
@@ -103,8 +103,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/ClientView/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1076">
+            <state relative-caret-position="836">
               <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Client/ClientView/LoginView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -134,11 +143,11 @@
         <option value="$PROJECT_DIR$/src/Client/ClientController/CustomerGUIController.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientView/CustomerView.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientController/Listeners/BrowseListen.java" />
-        <option value="$PROJECT_DIR$/src/Client/ClientView/LoginView.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientController/LoginController.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientView/MainView.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientController/ClientController.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientView/LoginView.java" />
       </list>
     </option>
   </component>
@@ -269,7 +278,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -280,7 +288,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.061146498" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.03821656" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.067515925" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -346,13 +354,6 @@
     <entry file="file://$PROJECT_DIR$/src/Client/ClientController/CustomerGUIController.java" />
     <entry file="file://$PROJECT_DIR$/src/Client/ClientView/CustomerView.java" />
     <entry file="file://$PROJECT_DIR$/src/Client/ClientController/Listeners/BrowseListen.java" />
-    <entry file="file://$PROJECT_DIR$/src/Client/ClientView/LoginView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1520">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/Order.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-568">
@@ -360,9 +361,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/ClientController/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
+        <state relative-caret-position="726">
           <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -370,16 +378,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/ClientView/MainView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1076">
-          <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
+        <state relative-caret-position="8360">
           <caret line="447" column="12" lean-forward="true" selection-start-line="447" selection-start-column="12" selection-end-line="447" selection-end-column="12" />
           <folding>
             <element signature="e#11190#11191#0" expanded="true" />
@@ -393,10 +394,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientView/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="836">
+          <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientView/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
         </state>
       </provider>
     </entry>
