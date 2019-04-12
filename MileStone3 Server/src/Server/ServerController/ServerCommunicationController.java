@@ -171,8 +171,13 @@ public class ServerCommunicationController implements Runnable {
 
             int newQuantity = Integer.parseInt((String) socketIn.readObject());
 
+            boolean updated  = false;
+            if(newQuantity < 40){
+                updated = serverController.getDatabaseController().getDatabaseModel().decreaseItemQuantity(itemID, 50, true);
+            }else{
+                updated = serverController.getDatabaseController().getDatabaseModel().decreaseItemQuantity(itemID, newQuantity, false);
+            }
 
-            boolean updated = serverController.getDatabaseController().getDatabaseModel().decreaseItemQuantity(itemID, newQuantity);
             if(updated){
                 socketOut.writeObject("updated");
             }else{

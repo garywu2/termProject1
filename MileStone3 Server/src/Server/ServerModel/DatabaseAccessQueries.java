@@ -18,5 +18,6 @@ public interface DatabaseAccessQueries {
     public static final String SQL_REMOVE_ITEM = "DELETE FROM items WHERE itemID =?";
     public static final String SQL_GET_ALL_ORDERS = "SELECT * FROM orders";
     public static final String SQL_CREATE_NEW_ORDER = "INSERT INTO orders (orderID, itemID, orderDate, activity) values (?,?,?,?)";
+    public static final String SQL_INCREASE_ITEM_QUANTITY = "UPDATE items SET itemQuantity =? WHERE itemID =?";
 
 }

@@ -84,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="169" column="48" selection-start-line="169" selection-start-column="48" selection-end-line="169" selection-end-column="48" />
+            <state relative-caret-position="256">
+              <caret line="174" column="33" selection-start-line="174" selection-start-column="33" selection-end-line="174" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8851#8852#0" expanded="true" />
@@ -98,8 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/DatabaseAccessQueries.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+            <state relative-caret-position="380">
+              <caret line="20" column="111" selection-start-line="20" selection-start-column="111" selection-end-line="20" selection-end-column="111" />
             </state>
           </provider>
         </entry>
@@ -107,7 +107,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Server/ServerController/DatabaseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-551">
+            <state relative-caret-position="171">
               <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -129,8 +129,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/DatabaseModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-296">
-              <caret line="284" column="47" selection-start-line="284" selection-start-column="47" selection-end-line="284" selection-end-column="47" />
+            <state relative-caret-position="1686">
+              <caret line="198" column="31" lean-forward="true" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="31" />
               <folding>
                 <element signature="e#9101#9102#0" expanded="true" />
                 <element signature="e#9134#9135#0" expanded="true" />
@@ -184,8 +184,8 @@
         <option value="$PROJECT_DIR$/src/Server/ServerController/DatabaseCredentials.java" />
         <option value="$PROJECT_DIR$/src/Server/ServerModel/test.java" />
         <option value="$PROJECT_DIR$/src/Server/ServerController/ServerController.java" />
-        <option value="$PROJECT_DIR$/src/Server/ServerModel/DatabaseAccessQueries.java" />
         <option value="$PROJECT_DIR$/src/Server/ServerController/DatabaseController.java" />
+        <option value="$PROJECT_DIR$/src/Server/ServerModel/DatabaseAccessQueries.java" />
         <option value="$PROJECT_DIR$/src/Server/ServerModel/DatabaseModel.java" />
         <option value="$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java" />
       </list>
@@ -253,7 +253,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555085560126" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555088368061" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -345,7 +345,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1312102" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24713376" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987261" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -440,16 +440,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="e#1985#1986#0" expanded="true" />
+            <element signature="e#2026#2027#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/DatabaseAccessQueries.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        <state relative-caret-position="380">
+          <caret line="20" column="111" selection-start-line="20" selection-start-column="111" selection-end-line="20" selection-end-column="111" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/ServerController/DatabaseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-551">
+        <state relative-caret-position="171">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -469,8 +480,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/DatabaseModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-296">
-          <caret line="284" column="47" selection-start-line="284" selection-start-column="47" selection-end-line="284" selection-end-column="47" />
+        <state relative-caret-position="1686">
+          <caret line="198" column="31" lean-forward="true" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="31" />
           <folding>
             <element signature="e#9101#9102#0" expanded="true" />
             <element signature="e#9134#9135#0" expanded="true" />
@@ -480,21 +491,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="e#1985#1986#0" expanded="true" />
-            <element signature="e#2026#2027#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="169" column="48" selection-start-line="169" selection-start-column="48" selection-end-line="169" selection-end-column="48" />
+        <state relative-caret-position="256">
+          <caret line="174" column="33" selection-start-line="174" selection-start-column="33" selection-end-line="174" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8851#8852#0" expanded="true" />

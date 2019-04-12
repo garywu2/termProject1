@@ -178,7 +178,7 @@ public class DatabaseModel implements DatabaseAccessQueries{
      * @param newQuantity new quantity of item
      * @return returns true, if item was updated, false otherwise
      */
-    synchronized public boolean decreaseItemQuantity(int id, int newQuantity) {
+    synchronized public boolean decreaseItemQuantity(int id, int newQuantity, boolean orderPlaced) {
         try (PreparedStatement pStmt = myConnection.prepareStatement(SQL_DECREASE_ITEM_QUANTITY)) {
             pStmt.setInt(1, newQuantity);
             pStmt.setInt(2, id);
@@ -193,6 +193,9 @@ public class DatabaseModel implements DatabaseAccessQueries{
             System.out.println("Item search by ID from DB error");
             e.printStackTrace();
         }
+        if(orderPlaced == true)
+            createNewOrder(generateOrderID(), id, getCurrentDate(), "Quantity below 40, order placed");
+
         createNewOrder(generateOrderID(), id, getCurrentDate(), "Quantity decreased");
         return true;
     }

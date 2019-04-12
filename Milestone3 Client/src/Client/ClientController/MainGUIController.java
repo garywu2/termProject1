@@ -176,14 +176,16 @@ public class MainGUIController extends GUIController {
                 sold = Integer.parseInt(JOptionPane.showInputDialog("Enter number of items sold:"));
             }
 
-            //output new quantity to server
-            clientController.getSocketOut().writeObject(String.valueOf(currQuantity - sold));
+            int newQuantity = currQuantity - sold;
+
+            clientController.getSocketOut().writeObject(String.valueOf(newQuantity));
 
             //gets confirmation from server
             String verif = (String) clientController.getSocketIn().readObject();
             if (verif.equals("not updated")) {
                 JOptionPane.showMessageDialog(null, "Tool not updated! Please refresh!");
             }
+
             //update table
             importItemsFromServer();
             mainView.updateItemTable();
