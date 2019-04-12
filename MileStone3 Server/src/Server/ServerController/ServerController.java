@@ -7,6 +7,14 @@ import java.net.UnknownHostException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * This class is responsible for managing the thread pool as well as
+ * the ServerCommunicationController. Everytime, a new client connects,
+ * this class makes an instance of the ServerCommunicationController
+ * for the client in a new thread
+ * @author Harsohail Brar
+ * @since April 12, 2019
+ */
 public class ServerController {
 
     private static final int PORT = 9000;

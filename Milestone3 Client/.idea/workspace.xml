@@ -2,7 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdae58c1-27a8-4313-93e9-fd17b04a2c2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../MileStone3 Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MileStone3 Server/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Notes/eclipse/ClassVSMemberVariablesANDMethods/src/FrontEnd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Notes/eclipse/ClassVSMemberVariablesANDMethods/src/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Notes/eclipse/PolymorphismExample/src/Child.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Notes/eclipse/PolymorphismExample/src/Parent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TermProject/MileStone3 Server/src/Server/ServerController/ServerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab5/ex2PostLab/Geometry/src/Accessible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment1/Fibonacci/bin/C__Users_harso_Google Drive_Engineering_winter_2019_cpsc_319_assignment1_Fibonacci_data1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment1/Fibonacci/bin/C__Users_harso_Google Drive_Engineering_winter_2019_cpsc_319_assignment1_Fibonacci_data2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment1/Fibonacci/bin/C__Users_harso_Google Drive_Engineering_winter_2019_cpsc_319_assignment1_Fibonacci_data3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment1/Fibonacci/bin/Fibonacci.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment1/Fibonacci/bin/Fibonacci.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment1/Fibonacci/~$graphs.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/example_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/FileInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/FileInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/FrontEnd.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/FrontEnd.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/FileInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/FrontEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/FrontEnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../econ_203/Notes/Chapter 21.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../encm_369/lab2/lab2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../encm_369/lab2/lab2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Hamster.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Hamster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/Clock/bin/Clock.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/Clock/bin/Clock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/Drawing/bin/Drawing.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/Drawing/bin/Drawing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/Drawing/bin/Line.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/Drawing/bin/Line.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/Drawing/bin/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/Drawing/bin/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/Drawing/bin/Polygon.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/Drawing/bin/Polygon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/Marathon/bin/Marathon.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/Marathon/bin/Marathon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/MultiDimensionalArray/bin/MultiDimensionalArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/MultiDimensionalArray/bin/MultiDimensionalArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/RetailStoreProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/RetailStoreProgram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/SinValidator/bin/SinValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/SinValidator/bin/SinValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1/lab1InLab.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1/lab1InLab.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/postlab/RetailStoreProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/postlab/RetailStoreProgram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/postlab1/RetailStoreProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/postlab1/RetailStoreProgram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/postlab1/RetailStoreProgram/orders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/postlab1/RetailStoreProgram/orders.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/postlab1/RetailStoreProgram/out/production/RetailStoreProgram/Shop.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/postlab1/RetailStoreProgram/out/production/RetailStoreProgram/Shop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/Geometry/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/Geometry/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/Geometry/out/production/Geometry/Geometry.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/Geometry/out/production/Geometry/Geometry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/Geometry/out/production/Geometry/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/Geometry/out/production/Geometry/Shape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/Geometry/src/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/Geometry/src/Geometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/Geometry/src/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/Geometry/src/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/TicTacToe2.0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/TicTacToe2.0/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/~$b4InLab.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../math_271/coverpage.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../math_271/coverpage.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../~$troduction ECON 203Gary first para edit lololol.docx" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,31 +61,95 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+            <state relative-caret-position="137">
+              <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Client/ClientController/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="171" column="58" selection-start-line="171" selection-start-column="58" selection-end-line="171" selection-end-column="58" />
+              <folding>
+                <element signature="e#11190#11191#0" expanded="true" />
+                <element signature="e#11232#11233#0" expanded="true" />
+                <element signature="e#16354#16355#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Client/ClientView/MainView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getTable</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/utils/Order.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientView/View.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientController/CustomerGUIController.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientView/CustomerView.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientController/Listeners/BrowseListen.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientView/LoginView.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientController/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientView/MainView.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientController/ClientController.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -62,16 +175,37 @@
               <item name="Client" type="462c0819:PsiDirectoryNode" />
               <item name="ClientController" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Milestone3 Client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Milestone3 Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="ClientView" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Milestone3 Client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Milestone3 Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554505024660" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554943016187" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="utils" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -86,7 +220,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.ClientController">
-    <configuration name="ClientController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientController" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client.ClientController.ClientController" />
       <module name="Milestone3 Client" />
       <extension name="coverage">
@@ -106,6 +240,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.ClientController" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ClientController" />
@@ -127,8 +265,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -136,8 +275,36 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.22929937" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.061146498" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.20127389" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5007153" side_tool="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32866243" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19722815" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.061146498" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.20151679" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -154,22 +321,154 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/utils/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/GUIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientView/View.java" />
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/CustomerGUIController.java" />
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientView/CustomerView.java" />
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/Listeners/BrowseListen.java" />
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientView/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1520">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-568">
+          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientView/MainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+        <state relative-caret-position="137">
+          <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="171" column="58" selection-start-line="171" selection-start-column="58" selection-end-line="171" selection-end-column="58" />
+          <folding>
+            <element signature="e#11190#11191#0" expanded="true" />
+            <element signature="e#11232#11233#0" expanded="true" />
+            <element signature="e#16354#16355#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Milestone3 Client</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

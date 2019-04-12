@@ -1,8 +1,6 @@
 package utils;
 
 import java.io.Serializable;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 /**
  * This is the Item class which holds information of each tool
@@ -33,7 +31,7 @@ public class Item implements Serializable {
     /**
      * Supplier of the tool
      */
-    private int toolSupplierIdNumber;
+    private Supplier toolSupplier;
 
     /**
      * Constructs an Item object with specified values of id, name, quantity, price,
@@ -42,31 +40,14 @@ public class Item implements Serializable {
      * @param name Name of tool
      * @param quantity Quantity of tool
      * @param price Price of tool
-     * @param supplierIdNumber Supplier number for the tool
+     * @param supplier Supplier of tool
      */
-	public Item(int id, String name, int quantity, double price, int supplierIdNumber) {
-		toolId = id;
-		toolName = name;
-		toolQuantity = quantity;
-		toolPrice = price;
-		toolSupplierIdNumber = supplierIdNumber;
-	}
-
-    /**
-     * Constructs a supplier object with database result set
-     * @param rs result set
-     */
-    public Item(ResultSet rs) {
-        try {
-            this.toolId = rs.getInt(1);
-            this.toolName = rs.getString(2);
-            this.toolPrice = rs.getDouble(3);
-            this.toolQuantity = rs.getInt(4);
-            this.toolSupplierIdNumber = rs.getInt(5);
-        } catch (SQLException e){
-            System.out.println("Item creation error (ResultSet)");
-            e.printStackTrace();
-        }
+    public Item(int id, String name, int quantity, double price, Supplier supplier){
+        toolId = id;
+        toolName = name;
+        toolQuantity = quantity;
+        toolPrice = price;
+        toolSupplier = supplier;
     }
 
     /**
@@ -74,7 +55,7 @@ public class Item implements Serializable {
      * @return string consisting of Item object information
      */
     public String toString() {
-        return String.format("%-5s %-20s %-10s %-7s %-15s", toolId, toolName, toolQuantity, toolPrice, toolSupplierIdNumber);
+        return String.format("%-5s %-20s %-10s %-7s %-15s", toolId, toolName, toolQuantity, toolPrice, toolSupplier.getName());
     }
 
     /**
@@ -119,11 +100,11 @@ public class Item implements Serializable {
         this.toolPrice = toolPrice;
     }
 
-    public int getToolSupplierIdNumber() {
-        return toolSupplierIdNumber ;
+    public Supplier getToolSupplier() {
+        return toolSupplier;
     }
 
-    public void setToolSupplier(int toolSupplierIdNumber ) {
-        this.toolSupplierIdNumber  = toolSupplierIdNumber ;
+    public void setToolSupplier(Supplier toolSupplier) {
+        this.toolSupplier = toolSupplier;
     }
 }

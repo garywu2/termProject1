@@ -2,10 +2,9 @@ package Client.ClientController;
 
 import Client.ClientView.LoginView;
 import Client.ClientView.MainView;
-import javax.swing.table.DefaultTableModel;
+
 import java.io.*;
 import java.net.*;
-
 
 /**
  * This class is responsible for communicating with the server
@@ -23,6 +22,7 @@ public class ClientController {
     private ObjectOutputStream socketOut;
     private Socket aSocket;
     private ObjectInputStream socketIn;
+
     private LoginController loginController;
     private MainGUIController mainGUIController;
 
@@ -40,11 +40,10 @@ public class ClientController {
             socketOut = new ObjectOutputStream(aSocket.getOutputStream());
 
             MainView mainView = new MainView(800, 550);
-            LoginView loginView = new LoginView(250, 175);
+            LoginView loginView = new LoginView(250, 150);
 
             loginController = new LoginController(loginView, this);
             mainGUIController = new MainGUIController(mainView, this);
-            mainGUIController.addListeners();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -59,22 +58,9 @@ public class ClientController {
         ClientController cc = new ClientController("localhost", 9000);
 
         cc.mainGUIController.importItemsFromServer();
+        //cc.importTableModelFromServer();
 
         cc.showMainWindow();
-    }
-
-
-    /**
-     * imports and sets tool table model from server
-     */
-    public void importTableModelFromServer() {
-        try {
-            DefaultTableModel readTableModel = (DefaultTableModel) socketIn.readObject();
-            mainGUIController.getMainView().setTableModel(readTableModel);
-        } catch (Exception e) {
-            System.out.println("ClientController: importTableModelFromServer error");
-            e.printStackTrace();
-        }
     }
 
     /**

@@ -8,6 +8,13 @@ import java.util.ArrayList;
 
 import utils.*;
 
+/**
+ * This class is responsible for communicating with the client.
+ * A new instance of this class is appointed to each client in an
+ * independent thread.
+ * @author Harsohail Brar
+ * @since April 12, 2019
+ */
 public class ServerCommunicationController implements Runnable {
 
     private Socket aSocket;
@@ -72,6 +79,10 @@ public class ServerCommunicationController implements Runnable {
                         exportItemsToClient();
                         break;
 
+                    case "orders":
+                        exportOrdersToClient();
+                        break;
+
                 }
             } catch (Exception e) {
             }
@@ -79,7 +90,7 @@ public class ServerCommunicationController implements Runnable {
     }
 
     /**
-     * TODO REMOVE
+     * sends all items to client
      */
     public void exportItemsToClient() {
         ArrayList<Item> items = serverController.getDatabaseController().getDatabaseModel().getItemsFromDB();
@@ -89,6 +100,24 @@ public class ServerCommunicationController implements Runnable {
 
             for (Item i : items) {
                 socketOut.writeObject(i);
+            }
+        } catch (IOException e) {
+            System.out.println("Exporting items from server error");
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * send all orders to client
+     */
+    public void exportOrdersToClient(){
+        ArrayList<Order> orders = serverController.getDatabaseController().getDatabaseModel().getOrdersFromDB();
+
+        try {
+            socketOut.writeObject(String.valueOf(orders.size()));
+
+            for (Order o: orders) {
+                socketOut.writeObject(o);
             }
         } catch (IOException e) {
             System.out.println("Exporting items from server error");
@@ -131,11 +160,17 @@ public class ServerCommunicationController implements Runnable {
         try {
             String status = (String) socketIn.readObject();
 
-            if (status.equals("reset"))
+            if (status.equals("reset")) {
                 return;
+            }
 
             int itemID = Integer.parseInt((String) socketIn.readObject());
+            //returns item to client for quantity check
+            Item searchedItem = serverController.getDatabaseController().getDatabaseModel().searchItemByID(itemID);
+            socketOut.writeObject(searchedItem);
+
             int newQuantity = Integer.parseInt((String) socketIn.readObject());
+
 
             boolean updated = serverController.getDatabaseController().getDatabaseModel().decreaseItemQuantity(itemID, newQuantity);
             if(updated){

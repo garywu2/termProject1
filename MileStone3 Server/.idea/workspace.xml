@@ -2,10 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40aa63eb-a6b5-45c5-97e0-44a4be4e25ed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Milestone3 Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Milestone3 Server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Shop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Notes/eclipse/ClassVSMemberVariablesANDMethods/src/FrontEnd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Notes/eclipse/ClassVSMemberVariablesANDMethods/src/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Notes/eclipse/PolymorphismExample/src/Child.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Notes/eclipse/PolymorphismExample/src/Parent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TermProject/MileStone3 Server/src/Server/ServerController/ServerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab5/ex2PostLab/Geometry/src/Accessible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment1/Fibonacci/bin/C__Users_harso_Google Drive_Engineering_winter_2019_cpsc_319_assignment1_Fibonacci_data1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment1/Fibonacci/bin/C__Users_harso_Google Drive_Engineering_winter_2019_cpsc_319_assignment1_Fibonacci_data2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment1/Fibonacci/bin/C__Users_harso_Google Drive_Engineering_winter_2019_cpsc_319_assignment1_Fibonacci_data3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment1/Fibonacci/bin/Fibonacci.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment1/Fibonacci/bin/Fibonacci.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment1/Fibonacci/~$graphs.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/example_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/FileInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/FileInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/FrontEnd.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/FrontEnd.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/out/production/assignment2/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/FileInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/FrontEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/FrontEnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpsc_319/assignment2/src/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../econ_203/Notes/Chapter 21.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../encm_369/lab2/lab2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../encm_369/lab2/lab2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/out/production/SimpleInheritance/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/out/production/SimpleInheritance/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/out/production/SimpleInheritance/Cat.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/out/production/SimpleInheritance/Cat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/out/production/SimpleInheritance/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/out/production/SimpleInheritance/Dog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/out/production/SimpleInheritance/Hamster.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/out/production/SimpleInheritance/Hamster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/out/production/SimpleInheritance/Pet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/out/production/SimpleInheritance/Pet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Hamster.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Hamster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Notes/eclipse/SimpleInheritance/src/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/Clock/bin/Clock.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/Clock/bin/Clock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/Drawing/bin/Drawing.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/Drawing/bin/Drawing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/Drawing/bin/Line.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/Drawing/bin/Line.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/Drawing/bin/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/Drawing/bin/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/Drawing/bin/Polygon.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/Drawing/bin/Polygon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/Marathon/bin/Marathon.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/Marathon/bin/Marathon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/MultiDimensionalArray/bin/MultiDimensionalArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/MultiDimensionalArray/bin/MultiDimensionalArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/RetailStoreProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/RetailStoreProgram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse/SinValidator/bin/SinValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse/SinValidator/bin/SinValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1/lab1InLab.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1/lab1InLab.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/postlab/RetailStoreProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/postlab/RetailStoreProgram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/postlab1/RetailStoreProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/postlab1/RetailStoreProgram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/postlab1/RetailStoreProgram/orders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/postlab1/RetailStoreProgram/orders.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/postlab1/RetailStoreProgram/out/production/RetailStoreProgram/Shop.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/postlab1/RetailStoreProgram/out/production/RetailStoreProgram/Shop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/Geometry/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/Geometry/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/Geometry/out/production/Geometry/Geometry.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/Geometry/out/production/Geometry/Geometry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/Geometry/out/production/Geometry/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/Geometry/out/production/Geometry/Shape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/Geometry/src/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/Geometry/src/Geometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/Geometry/src/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/Geometry/src/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/TicTacToe2.0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/TicTacToe2.0/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/~$b4InLab.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../math_271/coverpage.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../math_271/coverpage.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../~$troduction ECON 203Gary first para edit lololol.docx" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,23 +68,93 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+              <folding>
+                <element signature="e#1985#1986#0" expanded="true" />
+                <element signature="e#2026#2027#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+            <state relative-caret-position="287">
+              <caret line="169" column="48" selection-start-line="169" selection-start-column="48" selection-end-line="169" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#8851#8852#0" expanded="true" />
+                <element signature="e#8909#8910#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/Shop.java">
+        <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/DatabaseAccessQueries.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            <state relative-caret-position="95">
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Server/ServerController/DatabaseController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-551">
+              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#282#283#0" expanded="true" />
+                <element signature="e#320#321#0" expanded="true" />
+                <element signature="e#948#949#0" expanded="true" />
+                <element signature="e#984#985#0" expanded="true" />
+                <element signature="e#1118#1119#0" expanded="true" />
+                <element signature="e#1168#1169#0" expanded="true" />
+                <element signature="e#1259#1260#0" expanded="true" />
+                <element signature="e#1294#1295#0" expanded="true" />
+                <element signature="e#1421#1422#0" expanded="true" />
+                <element signature="e#1469#1470#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/DatabaseModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-296">
+              <caret line="284" column="47" selection-start-line="284" selection-start-column="47" selection-end-line="284" selection-end-column="47" />
+              <folding>
+                <element signature="e#9101#9102#0" expanded="true" />
+                <element signature="e#9134#9135#0" expanded="true" />
+                <element signature="e#9260#9261#0" expanded="true" />
+                <element signature="e#9304#9305#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Server/ServerController/DatabaseCredentials.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="73" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/Item.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1197">
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,6 +164,14 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -49,6 +179,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/utils/Shop.java" />
+        <option value="$PROJECT_DIR$/src/utils/Order.java" />
+        <option value="$PROJECT_DIR$/src/utils/Item.java" />
+        <option value="$PROJECT_DIR$/src/Server/ServerController/DatabaseCredentials.java" />
+        <option value="$PROJECT_DIR$/src/Server/ServerModel/test.java" />
+        <option value="$PROJECT_DIR$/src/Server/ServerController/ServerController.java" />
+        <option value="$PROJECT_DIR$/src/Server/ServerModel/DatabaseAccessQueries.java" />
+        <option value="$PROJECT_DIR$/src/Server/ServerController/DatabaseController.java" />
+        <option value="$PROJECT_DIR$/src/Server/ServerModel/DatabaseModel.java" />
         <option value="$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java" />
       </list>
     </option>
@@ -64,8 +202,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -108,6 +244,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -115,7 +253,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554607067578" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555085560126" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -133,7 +271,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ServerController">
     <configuration name="ServerCommunicationController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server.ServerController.ServerCommunicationController" />
       <module name="MileStone3 Server" />
@@ -147,8 +285,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServerController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.ServerController.ServerController" />
+      <module name="MileStone3 Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.ServerController.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.ServerModel.test" />
+      <module name="MileStone3 Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.ServerModel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ServerController" />
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.ServerCommunicationController" />
       </list>
     </recent_temporary>
@@ -170,7 +336,7 @@
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20600858" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -179,15 +345,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.46624205" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1312102" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3987261" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3299363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -197,24 +363,142 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20028612" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22547771" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3299363" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/utils/Shop.java">
+    <entry file="file://$PROJECT_DIR$/src/utils/Shop.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/sql/DriverManager.java" />
+    <entry file="file://$PROJECT_DIR$/src/utils/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        <state relative-caret-position="187">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1437#1438#0" expanded="true" />
+            <element signature="e#1467#1468#0" expanded="true" />
+            <element signature="e#1510#1511#0" expanded="true" />
+            <element signature="e#1548#1549#0" expanded="true" />
+            <element signature="e#1584#1585#0" expanded="true" />
+            <element signature="e#1616#1617#0" expanded="true" />
+            <element signature="e#1666#1667#0" expanded="true" />
+            <element signature="e#1708#1709#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java">
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+        <state relative-caret-position="409">
+          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <folding>
+            <element signature="e#494#495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerController/DatabaseCredentials.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="73" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/DatabaseAccessQueries.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerController/DatabaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-551">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#984#985#0" expanded="true" />
+            <element signature="e#1118#1119#0" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1259#1260#0" expanded="true" />
+            <element signature="e#1294#1295#0" expanded="true" />
+            <element signature="e#1421#1422#0" expanded="true" />
+            <element signature="e#1469#1470#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerModel/DatabaseModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-296">
+          <caret line="284" column="47" selection-start-line="284" selection-start-column="47" selection-end-line="284" selection-end-column="47" />
+          <folding>
+            <element signature="e#9101#9102#0" expanded="true" />
+            <element signature="e#9134#9135#0" expanded="true" />
+            <element signature="e#9260#9261#0" expanded="true" />
+            <element signature="e#9304#9305#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="e#1985#1986#0" expanded="true" />
+            <element signature="e#2026#2027#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="169" column="48" selection-start-line="169" selection-start-column="48" selection-end-line="169" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8851#8852#0" expanded="true" />
+            <element signature="e#8909#8910#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -296,7 +580,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>mysql-connector-java-5.1.17-bin</last-edited>
+          <last-edited>mysql-connector-java-8.0.15</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

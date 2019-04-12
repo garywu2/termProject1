@@ -22,11 +22,13 @@ public class MainView extends JFrame {
     //MEMBER VARIABLES
     private JPanel titlePanel, centrePanel, buttonPanel;
 
-    private JButton browseButton, searchByIDButton, searchByNameButton, saleButton, addButton, removeButton, refreshButton;
+    private JButton browseButton, searchByIDButton, searchByNameButton,
+                    saleButton, addButton, removeButton, refreshButton,
+                    showToolListButton, showOrderListButton;
 
-    private DefaultTableModel tableModel;
-    private JScrollPane scrollPane;
-    private JTable table;
+    private DefaultTableModel itemTableModel, orderTableModel;
+    private JScrollPane itemScrollPane, orderScrollPane;
+    private JTable itemTable, orderTable;
 
     private int width;
     private int height;
@@ -50,6 +52,8 @@ public class MainView extends JFrame {
         addButton = new JButton("Add Item");
         removeButton = new JButton("Remove Item");
         refreshButton = new JButton("Refresh");
+        showToolListButton = new JButton("Show Tool List");
+        showOrderListButton = new JButton("Show Order List");
 
         setTitle("Main Window");
         setSize(width, height);
@@ -58,7 +62,9 @@ public class MainView extends JFrame {
         add("Center", centrePanel);
         add("South", buttonPanel);
 
-        titlePanel.add(new Label("A Tool Shop Application"));
+        titlePanel.add(showToolListButton);
+        titlePanel.add(new Label("A Tool Shop Application for Employee"));
+        titlePanel.add(showOrderListButton);
 
         buttonPanel.add(browseButton);
         buttonPanel.add(searchByIDButton);
@@ -79,32 +85,57 @@ public class MainView extends JFrame {
     }
 
     /**
-     * Creates a table of the objects and displays it on the GUI
+     * Creates an item table of the objects and displays it on the GUI
      */
-    public void createTable(){
-        table = new JTable(tableModel);
-        table.getTableHeader().setReorderingAllowed(false);
-        scrollPane = new JScrollPane(table);
-
-        centrePanel.add(scrollPane, BorderLayout.LINE_END);
-        revalidate();
-    }
-
-    /**
-     * Updates table
-     */
-    public void updateTable(){
+    public void createItemTable(){
         if(centrePanel != null)
             remove(centrePanel);
 
         centrePanel = new JPanel();
         add("Center", centrePanel);
 
-        table = new JTable(tableModel);
-        table.getTableHeader().setReorderingAllowed(false);
-        scrollPane = new JScrollPane(table);
+        itemTable = new JTable(itemTableModel);
+        itemTable.getTableHeader().setReorderingAllowed(false);
+        itemScrollPane = new JScrollPane(itemTable);
 
-        centrePanel.add(scrollPane, BorderLayout.LINE_END);
+        centrePanel.add(itemScrollPane, BorderLayout.LINE_END);
+        revalidate();
+    }
+
+    /**
+     * Creates an order table on the centre panel
+     */
+    public void createOrderTable(){
+        if(centrePanel != null)
+            remove(centrePanel);
+
+        centrePanel = new JPanel();
+        add("Center", centrePanel);
+
+        orderTable = new JTable(orderTableModel);
+        orderTable.getTableHeader().setReorderingAllowed(false);
+        orderScrollPane = new JScrollPane(orderTable);
+
+        centrePanel.add(orderScrollPane, BorderLayout.LINE_END);
+        revalidate();
+    }
+
+
+    /**
+     * Updates table
+     */
+    public void updateItemTable(){
+        if(centrePanel != null)
+            remove(centrePanel);
+
+        centrePanel = new JPanel();
+        add("Center", centrePanel);
+
+        itemTable = new JTable(itemTableModel);
+        itemTable.getTableHeader().setReorderingAllowed(false);
+        itemScrollPane = new JScrollPane(itemTable);
+
+        centrePanel.add(itemScrollPane, BorderLayout.LINE_END);
         revalidate();
     }
 
@@ -165,6 +196,21 @@ public class MainView extends JFrame {
     }
 
 
+    /**
+     * Adds an action listener to the show item list button
+     * @param listenerForShowItemListButton
+     */
+    public void addShowItemListListener(ActionListener listenerForShowItemListButton){
+        showToolListButton.addActionListener(listenerForShowItemListButton);
+    }
+
+    /**
+     * Adds an action listener to the show order list button
+     * @param listenerForShowOrderListButton
+     */
+    public void addShowOrderListListener(ActionListener listenerForShowOrderListButton){
+        showOrderListButton.addActionListener(listenerForShowOrderListButton);
+    }
 
     //getters and setters
 
@@ -196,24 +242,36 @@ public class MainView extends JFrame {
         return refreshButton;
     }
 
+    public JButton getShowToolListButton() {
+        return showToolListButton;
+    }
+
+    public JButton getShowOrderListButton() {
+        return showOrderListButton;
+    }
+
     public JPanel getCentrePanel() {
         return centrePanel;
     }
 
 
-    public JTable getTable() {
-        return table;
+    public JTable getItemTable() {
+        return itemTable;
     }
 
-    public void setTable(JTable table) {
-        this.table = table;
+    public void setItemTable(JTable table) {
+        this.itemTable = table;
     }
 
-    public DefaultTableModel getTableModel() {
-        return tableModel;
+    public DefaultTableModel getItemTableModel() {
+        return itemTableModel;
     }
 
-    public void setTableModel(DefaultTableModel tableModel) {
-        this.tableModel = tableModel;
+    public void setItemTableModel(DefaultTableModel tableModel) {
+        this.itemTableModel = tableModel;
+    }
+
+    public void setOrderTableModel(DefaultTableModel orderTableModel) {
+        this.orderTableModel = orderTableModel;
     }
 }

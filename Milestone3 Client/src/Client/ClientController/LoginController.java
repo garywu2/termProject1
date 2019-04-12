@@ -21,6 +21,7 @@ public class LoginController extends GUIController{
 
     private LoginView loginView;
     private boolean verified;
+    private boolean employee;
 
     /**
      * Creates a LoginController object and adds the object listener for the
@@ -34,47 +35,35 @@ public class LoginController extends GUIController{
         super(cc);
         loginView = l;
         verified = false;
+        employee = false;
 
-        loginView.addLoginListener(new LoginListen());
+        loginView.addLoginListener(e -> loginListen());
     }
 
     /**
      * Action Listener implementation for Login Button
      */
-    class LoginListen implements ActionListener{
+    public void loginListen(){
+        try{
+            String username = loginView.getUsernameField().getText();
+            String password = loginView.getPasswordFeild().getText();
 
-        /**
-         * When the user clicks on the button it checks to see if
-         * the username and password is the same as one of our users
-         * from our database and if yes the GUI becomes visible else
-         * a box will prompt telling user is invalid
-         */
-        public void actionPerformed(ActionEvent e){
-            if(e.getSource() == loginView.getLoginButton()){
-                try{
-                    String username = loginView.getUsernameField().getText();
-                    String password = loginView.getPasswordFeild().getText();
+            clientController.getSocketOut().writeObject(new User(username, password));
 
-                    clientController.getSocketOut().writeObject(new User(username, password));
+            String verification = (String)clientController.getSocketIn().readObject();
 
-                    String verification = (String)clientController.getSocketIn().readObject();
-
-                    if(verification.equals("verified")) {
-                        loginView.setVisible(false);
-                        verified = true;
-                        System.out.println("User Logged In!");
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Invalid User!");
-                    }
-
-                    clientController.getSocketOut().flush();
-                }catch(Exception f){
-                    f.printStackTrace();
-                }
-
+            if(verification.equals("verified")) {
+                loginView.setVisible(false);
+                verified = true;
+                System.out.println("User Logged In!");
+            }else{
+                JOptionPane.showMessageDialog(null, "Invalid User!");
             }
-        }
 
+            clientController.getSocketOut().flush();
+        }catch(Exception f){
+            f.printStackTrace();
+        }
     }
 
     //getters and setters
@@ -84,5 +73,9 @@ public class LoginController extends GUIController{
 
     public boolean isVerified() {
         return verified;
+    }
+
+    public boolean isEmployee() {
+        return employee;
     }
 }
