@@ -11,13 +11,20 @@ import Server.ServerModel.DatabaseModel;
  */
 public class DatabaseController implements DatabaseCredentials{
 
+    //MEMBER VARIABLES
     private Connection myConnection;
     private DatabaseModel databaseModel;
 
+    /**
+     * creates a database controller object
+     */
     public DatabaseController(){
         initializeConnection();
     }
 
+    /**
+     * creates a connection with the database
+     */
     public void initializeConnection() {
         try {
             setMyConnection(DriverManager.getConnection(DB_URL, USERNAME, PASSWORD));
@@ -28,6 +35,9 @@ public class DatabaseController implements DatabaseCredentials{
         }
     }
 
+    /**
+     * closes the connection with the database
+     */
     public void close() {
         try {
             myConnection.close();
