@@ -22,9 +22,9 @@ public class MainView extends JFrame {
     //MEMBER VARIABLES
     private JPanel titlePanel, centrePanel, buttonPanel;
 
-    private JButton browseButton, searchByIDButton, searchByNameButton,
-                    saleButton, addButton, removeButton, refreshButton,
-                    showToolListButton, showOrderListButton;
+    private JButton browseButton, searchByIDButton, searchByNameButton, checkQuantityButton,
+            saleButton, addButton, removeButton, refreshButton,
+            showToolListButton, showOrderListButton;
 
     private DefaultTableModel itemTableModel, orderTableModel;
     private JScrollPane itemScrollPane, orderScrollPane;
@@ -48,6 +48,7 @@ public class MainView extends JFrame {
         browseButton = new JButton("Browse");
         searchByIDButton = new JButton("Search by ID");
         searchByNameButton = new JButton("Search by Name");
+        checkQuantityButton = new JButton("Check Item Quantity");
         saleButton = new JButton("Sale");
         addButton = new JButton("Add Item");
         removeButton = new JButton("Remove Item");
@@ -69,6 +70,7 @@ public class MainView extends JFrame {
         buttonPanel.add(browseButton);
         buttonPanel.add(searchByIDButton);
         buttonPanel.add(searchByNameButton);
+        buttonPanel.add(checkQuantityButton);
         buttonPanel.add(saleButton);
         buttonPanel.add(addButton);
         buttonPanel.add(removeButton);
@@ -212,6 +214,14 @@ public class MainView extends JFrame {
         showOrderListButton.addActionListener(listenerForShowOrderListButton);
     }
 
+    /**
+     * Adds an action listener to the check quanitity button
+     * @param listenerForCheckQuantityButton
+     */
+    public void addCheckQuantityListener(ActionListener listenerForCheckQuantityButton){
+        checkQuantityButton.addActionListener(listenerForCheckQuantityButton);
+    }
+
     //getters and setters
 
     public JButton getBrowseButton() {
@@ -254,6 +264,9 @@ public class MainView extends JFrame {
         return centrePanel;
     }
 
+    public JButton getCheckQuantityButton() {
+        return checkQuantityButton;
+    }
 
     public JTable getItemTable() {
         return itemTable;

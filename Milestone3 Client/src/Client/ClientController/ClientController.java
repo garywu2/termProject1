@@ -39,7 +39,7 @@ public class ClientController {
             socketIn = new ObjectInputStream(aSocket.getInputStream());
             socketOut = new ObjectOutputStream(aSocket.getOutputStream());
 
-            MainView mainView = new MainView(800, 550);
+            MainView mainView = new MainView(900, 550);
             LoginView loginView = new LoginView(250, 200);
 
             loginController = new LoginController(loginView, this);

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 /**
  * This is a JUnit test class which essentially tests that the getter
  * setters of item work
- * 
+ *
  * @author  Gary Wu
  * @version 4.10.0
  * @since April 5, 2019

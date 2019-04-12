@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 /**
- * Class which runs all the tests those being item test and 
+ * Class which runs all the tests those being item test and
  * supplier test
  *
  * @author  Gary Wu

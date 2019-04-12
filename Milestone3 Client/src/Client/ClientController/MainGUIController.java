@@ -44,6 +44,7 @@ public class MainGUIController extends GUIController {
         mainView.addRefreshListener(e -> refreshListen());
         mainView.addShowItemListListener(e -> showItemListListen());
         mainView.addShowOrderListListener(e -> showOrderListListen());
+        mainView.addCheckQuantityListener(e -> checkQuantityListen());
     }
 
     /**
@@ -304,6 +305,30 @@ public class MainGUIController extends GUIController {
             //update table
             mainView.updateItemTable();
         } catch (Exception f) {
+            f.printStackTrace();
+        }
+    }
+
+    /**
+     * checks and prompts quantity of an item
+     */
+    public void checkQuantityListen(){
+        //inputs
+        int id = intInputPrompt("Enter new tool ID: (integer)");
+
+        try{
+            //send
+            clientController.getSocketOut().writeObject("checkQuantity");
+            clientController.getSocketOut().writeObject(String.valueOf(id));
+            //recieve
+            Item readItem = (Item)clientController.getSocketIn().readObject();
+
+            JOptionPane.showMessageDialog(null, "Quantity of item: " + readItem.getToolId() + " is " + readItem.getToolQuantity());
+
+            importItemsFromServer();
+            //update table
+            mainView.updateItemTable();
+        }catch (Exception f){
             f.printStackTrace();
         }
     }

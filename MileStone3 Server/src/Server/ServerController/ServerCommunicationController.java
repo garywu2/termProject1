@@ -99,9 +99,28 @@ public class ServerCommunicationController implements Runnable {
                         exportOrdersToClient();
                         break;
 
+                    case "checkQuantity":
+                        checkItemQuantity();
+                        exportItemsToClient();
+                        break;
                 }
             } catch (Exception e) {
             }
+        }
+    }
+
+    /**
+     * checks quantity for the item requested
+     */
+    public void checkItemQuantity(){
+        try{
+            int id = Integer.parseInt((String)socketIn.readObject());
+
+            Item searchedItem = serverController.getDatabaseController().getDatabaseModel().searchItemByID(id);
+
+            socketOut.writeObject(searchedItem);
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 
