@@ -27,7 +27,6 @@ public class DatabaseModel implements DatabaseAccessQueries{
 
     private Connection myConnection;
     private int userId = 2;
-    private DefaultTableModel tableModel;
 
     /**
      * DatabaseModel constructor
@@ -313,21 +312,5 @@ public class DatabaseModel implements DatabaseAccessQueries{
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD");
         return sdf.format(cal.getTime());
-    }
-
-    // getters and setters
-
-    /**
-     * @return the tableModel
-     */
-    public DefaultTableModel getTableModel() {
-        return tableModel;
-    }
-
-    /**
-     * @param tableModel the tableModel to set
-     */
-    public void setTableModel(DefaultTableModel tableModel) {
-        this.tableModel = tableModel;
     }
 }
