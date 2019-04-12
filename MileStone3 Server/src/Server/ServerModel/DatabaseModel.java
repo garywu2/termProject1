@@ -308,6 +308,10 @@ public class DatabaseModel implements DatabaseAccessQueries{
         return (int)Math.round(Math.random() * 89999) + 10000;
     }
 
+    /**
+     * gets current date
+     * @return current date string
+     */
     synchronized public String getCurrentDate(){
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD");
