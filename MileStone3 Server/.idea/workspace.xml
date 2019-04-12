@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40aa63eb-a6b5-45c5-97e0-44a4be4e25ed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerController/ServerCommunicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Milestone3 Client/.idea/Milestone3 Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Milestone3 Client/.idea/Milestone3 Client.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Milestone3 Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Milestone3 Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Milestone3 Client/src/Client/ClientController/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Milestone3 Client/src/Client/ClientController/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Milestone3 Client/src/Client/ClientController/MainGUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Milestone3 Client/src/Client/ClientController/MainGUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Milestone3 Client/src/Client/ClientView/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Milestone3 Client/src/Client/ClientView/MainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Milestone3 Client/src/utils/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Milestone3 Client/src/utils/AllTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Milestone3 Client/src/utils/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Milestone3 Client/src/utils/ItemTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Milestone3 Client/src/utils/SupplierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Milestone3 Client/src/utils/SupplierTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -264,7 +258,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20886981" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
