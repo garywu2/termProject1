@@ -61,11 +61,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
+            <state relative-caret-position="511">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -73,7 +73,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/ClientController/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="361">
               <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -82,15 +82,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="175" column="28" selection-start-line="175" selection-start-column="28" selection-end-line="175" selection-end-column="28" />
+            <state relative-caret-position="653">
+              <caret line="447" column="12" lean-forward="true" selection-start-line="447" selection-start-column="12" selection-end-line="447" selection-end-column="12" />
               <folding>
                 <element signature="e#11190#11191#0" expanded="true" />
                 <element signature="e#11232#11233#0" expanded="true" />
-                <element signature="e#16367#16368#0" expanded="true" />
+                <element signature="e#15119#15120#0" expanded="true" />
+                <element signature="e#15171#15172#0" expanded="true" />
+                <element signature="e#16275#16276#0" expanded="true" />
+                <element signature="e#16327#16328#0" expanded="true" />
+                <element signature="e#16637#16638#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/ClientView/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
+            <state relative-caret-position="-1076">
               <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
             </state>
           </provider>
@@ -133,8 +137,8 @@
         <option value="$PROJECT_DIR$/src/Client/ClientView/LoginView.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientController/LoginController.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientView/MainView.java" />
-        <option value="$PROJECT_DIR$/src/Client/ClientController/ClientController.java" />
         <option value="$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java" />
+        <option value="$PROJECT_DIR$/src/Client/ClientController/ClientController.java" />
       </list>
     </option>
   </component>
@@ -276,7 +280,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.061146498" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.29171973" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.03821656" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -342,16 +346,6 @@
     <entry file="file://$PROJECT_DIR$/src/Client/ClientController/CustomerGUIController.java" />
     <entry file="file://$PROJECT_DIR$/src/Client/ClientView/CustomerView.java" />
     <entry file="file://$PROJECT_DIR$/src/Client/ClientController/Listeners/BrowseListen.java" />
-    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/ClientView/LoginView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1520">
@@ -366,29 +360,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/ClientView/MainView.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+        <state relative-caret-position="361">
+          <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientView/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
+        <state relative-caret-position="-1076">
+          <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/ClientController/MainGUIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="175" column="28" selection-start-line="175" selection-start-column="28" selection-end-line="175" selection-end-column="28" />
+        <state relative-caret-position="653">
+          <caret line="447" column="12" lean-forward="true" selection-start-line="447" selection-start-column="12" selection-end-line="447" selection-end-column="12" />
           <folding>
             <element signature="e#11190#11191#0" expanded="true" />
             <element signature="e#11232#11233#0" expanded="true" />
-            <element signature="e#16367#16368#0" expanded="true" />
+            <element signature="e#15119#15120#0" expanded="true" />
+            <element signature="e#15171#15172#0" expanded="true" />
+            <element signature="e#16275#16276#0" expanded="true" />
+            <element signature="e#16327#16328#0" expanded="true" />
+            <element signature="e#16637#16638#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ClientController/ClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>

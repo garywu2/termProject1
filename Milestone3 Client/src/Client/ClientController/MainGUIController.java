@@ -172,7 +172,7 @@ public class MainGUIController extends GUIController {
             int currQuantity = readItem.getToolQuantity();
 
             while (sold > currQuantity) {
-                JOptionPane.showMessageDialog(null, "Sale exceeded quantity!");
+                JOptionPane.showMessageDialog(null, "Sale exceeded quantity! Please refresh!");
                 sold = Integer.parseInt(JOptionPane.showInputDialog("Enter number of items sold:"));
             }
 
@@ -200,7 +200,6 @@ public class MainGUIController extends GUIController {
          * and adds it to the GUI table as well as sends it to the server to add it
          * to the shop inventory
          *
-         * @param e
          */
         public void addListen () {
             try {
@@ -430,7 +429,11 @@ public class MainGUIController extends GUIController {
                 data[i][4] = readItem.getToolSupplier().getId() + " - " + readItem.getToolSupplier().getName();
             }
 
-            DefaultTableModel tableModel = new DefaultTableModel(data, header);
+            DefaultTableModel tableModel = new DefaultTableModel(data, header){
+                public boolean isCellEditable(int rowIndex, int mColIndex){
+                    return false;
+                }
+            };
             mainView.setItemTableModel(tableModel);
         } catch (Exception e) {
             System.out.println("Importing item from server error");
@@ -456,7 +459,11 @@ public class MainGUIController extends GUIController {
                 data[i][3] = readOrder.getActivity();
             }
 
-            DefaultTableModel tableModel = new DefaultTableModel(data, header);
+            DefaultTableModel tableModel = new DefaultTableModel(data, header){
+                public boolean isCellEditable(int rowIndex, int mColIndex){
+                    return false;
+                }
+            };
             mainView.setOrderTableModel(tableModel);
         }catch(Exception e){
             System.out.println("Importing orders from server error");
