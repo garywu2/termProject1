@@ -55,7 +55,7 @@ public class ClientController {
      * @param args command line arguments
      */
     public static void main(String[] args) {
-        ClientController cc = new ClientController("localhost", 9000);
+        ClientController cc = new ClientController("10.13.153.147", 9000);
 
         cc.mainGUIController.importItemsFromServer();
         //cc.importTableModelFromServer();
